@@ -14,6 +14,14 @@ if (cleanArgs.Length > 0 && cleanArgs[0].Equals("real", StringComparison.Ordinal
     if (json) Console.WriteLine(JsonSerializer.Serialize(review, Json.Options)); else RealCorpusGate.Print(review);
     return review.Recommendation == "FIX CORE AND REPEAT REAL CORPUS GATE" ? 2 : 0;
 }
+if (cleanArgs.Length > 0 && cleanArgs[0].Equals("demo", StringComparison.OrdinalIgnoreCase))
+{
+    var destination = cleanArgs.Length > 1 ? Path.GetFullPath(cleanArgs[1]) : Path.Combine(Environment.CurrentDirectory, "demo");
+    var demo = new GroundTruthGenerator().Create(destination);
+    Console.WriteLine($"GitIt GUI demo created: {demo.Root}");
+    Console.WriteLine($"Files: {demo.Versions.Count}. This synthetic demo is not Real Corpus Gate evidence.");
+    return 0;
+}
 var dataset = new GroundTruthGenerator().Create();
 var report = Benchmark.Run(dataset, Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "real-world-corpus")));
 Benchmark.WriteReports(report);

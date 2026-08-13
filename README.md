@@ -1,4 +1,4 @@
-# GitIt v0.0.4
+# GitIt v0.0.6
 
 GitIt is a local-first, evidence-led Office Document Lineage Engine. It does not invent a history that an Office package did not preserve: direct parent edges require corroboration; content-only copies remain **related but unproven**; timestamps are supporting or conflicting evidence, never a hard ordering rule.
 
@@ -16,6 +16,7 @@ dotnet run --project src/GitIt.Cli -- diff C:\file-a.xlsx C:\file-b.xlsx
 dotnet run --project src/GitIt.Cli -- corpus validate real-world-corpus --json
 
 dotnet run --project src/GitIt.Benchmarks
+dotnet run --project src/GitIt.Benchmarks -- demo
 dotnet run --project src/GitIt.Desktop
 ```
 
@@ -23,7 +24,7 @@ All CLI commands accept `--json`. The stable renderer contract is [GitIt Analysi
 
 `gitit explain <folder> <version-or-file> [--json]` gives the right-panel-ready explanation for one version: selected parent, alternatives, evidence, conflicts, and participation evidence. Run the synthetic benchmark runner with `dotnet run --project src/GitIt.Benchmarks`; it produces `outputs/benchmark-report.json`, `outputs/benchmark-report.md`, and `outputs/REVIEW_SUMMARY_v0.0.4.md`. After manually preparing authorized files, run `dotnet run --project src/GitIt.Benchmarks -- real real-world-corpus` to generate `outputs/REAL_CORPUS_REVIEW.md`.
 
-`GitIt.Desktop` is a Windows-only WPF visual test harness. It imports a folder through the same Core engine and displays document families, the DAG-oriented lineage graph, evidence, semantic Diff, participants, warnings, and a collapsible provenance test panel. It is not a production GUI and does not change the Real Corpus Gate result.
+`GitIt.Desktop` is a Windows-only WPF visual test harness. It imports a folder through the same Core engine and presents human-readable family names, a version lineage view, a timeline, evidence, semantic Diff, participants, warnings, and technical provenance. It does not recalculate Core scores or infer editing environments. Run `dotnet run --project src/GitIt.Benchmarks -- demo` to create an isolated synthetic GUI demonstration under `demo`; it is not Real Corpus Gate evidence.
 
 ## Evidence model
 
@@ -57,7 +58,7 @@ The current engine asserts a `Probable` or `Possible` parent only with provenanc
 ## Not supported
 
 - VBA, PowerQuery, PivotTable deep semantics, advanced charts, external connections, animations, SmartArt, embedded OLE, media timelines, headers/footers/text boxes, and full revision-timeline reconstruction. Detected package parts are reported as partially analyzed rather than silently ignored.
-- GUI, cloud storage, accounts, LLM-based lineage guessing, or identity inference.
+- Cloud storage, accounts, LLM-based lineage guessing, or identity inference. The current WPF application is an explicitly bounded test harness, not a production GUI.
 
 ## Benchmark cases
 

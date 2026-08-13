@@ -1,8 +1,8 @@
 <Window x:Class="GitIt.Desktop.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GitIt — 文档版本考古" Width="1420" Height="860" MinWidth="1050" MinHeight="650"
-        Background="#F7F8FA" AllowDrop="True" Drop="DropArea_Drop" DragOver="DropArea_DragOver">
+        Title="GitIt — 文档版本考古" Width="1480" Height="900" MinWidth="1100" MinHeight="680"
+        Background="#F6F8FB" AllowDrop="True" Drop="DropArea_Drop" DragOver="DropArea_DragOver">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -11,34 +11,39 @@
     </Grid.RowDefinitions>
 
     <DockPanel Grid.Row="0" Background="White" Margin="0,0,0,1" LastChildFill="False">
-      <StackPanel Orientation="Vertical" Margin="20,14" DockPanel.Dock="Left">
-        <TextBlock Text="GitIt" FontSize="23" FontWeight="SemiBold" />
-        <TextBlock Text="看清文件从哪里来、谁改过、改了什么。" Foreground="#5D6570" />
+      <StackPanel Orientation="Vertical" Margin="22,14" DockPanel.Dock="Left">
+        <TextBlock Text="GitIt" FontSize="24" FontWeight="SemiBold" />
+        <TextBlock Text="文档版本考古 · 看清文件关系、改动与不确定性" Foreground="#59636E" />
       </StackPanel>
-      <Button DockPanel.Dock="Right" Margin="12" Padding="16,9" Click="ChooseFolder_Click" Content="选择文件夹" />
+      <Button DockPanel.Dock="Right" Margin="0,14,0,14" Padding="16,9" Click="OpenDemo_Click" Content="打开演示数据" />
+      <Button DockPanel.Dock="Right" Margin="14" Padding="16,9" Click="ChooseFolder_Click" Content="选择其他文件夹" />
     </DockPanel>
 
-    <Border Grid.Row="1" Margin="12,10,12,0" Padding="12" CornerRadius="5" BorderBrush="#C8D5E5" BorderThickness="1" Background="#EEF6FF">
-      <TextBlock Text="{Binding StatusText}" TextWrapping="Wrap" />
+    <Border Grid.Row="1" Margin="12,10,12,0" Padding="10" CornerRadius="5" BorderBrush="#C8D5E5" BorderThickness="1" Background="#EEF6FF">
+      <DockPanel>
+        <TextBlock Text="{Binding StatusText}" TextWrapping="Wrap" />
+        <TextBlock Text="{Binding Summary}" DockPanel.Dock="Right" Foreground="#475467" />
+      </DockPanel>
     </Border>
 
-    <Grid Grid.Row="2" Margin="12" AllowDrop="True" Drop="DropArea_Drop" DragOver="DropArea_DragOver">
+    <Grid Grid.Row="2" Margin="12">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="250" />
+        <ColumnDefinition Width="260" />
         <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="350" />
+        <ColumnDefinition Width="390" />
       </Grid.ColumnDefinitions>
 
       <Border Grid.Column="0" Background="White" BorderBrush="#DCE1E8" BorderThickness="1" Padding="12">
         <DockPanel>
           <TextBlock DockPanel.Dock="Top" Text="文档家族" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8" />
+          <TextBlock DockPanel.Dock="Top" Text="选择一个家族查看其版本生命周期。" Foreground="#667085" FontSize="12" Margin="0,0,0,8" />
           <ListBox ItemsSource="{Binding Families}" SelectedItem="{Binding SelectedFamily}" BorderThickness="0">
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <StackPanel Margin="4,7">
-                  <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
-                  <TextBlock Text="{Binding Kind}" Foreground="#57606A" FontSize="12" />
-                  <TextBlock Text="{Binding Summary}" Foreground="#57606A" FontSize="12" TextWrapping="Wrap" />
+                <StackPanel Margin="4,8">
+                  <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                  <TextBlock Text="{Binding Kind}" Foreground="#475467" FontSize="12" />
+                  <TextBlock Text="{Binding Summary}" Foreground="#667085" FontSize="12" TextWrapping="Wrap" />
                 </StackPanel>
               </DataTemplate>
             </ListBox.ItemTemplate>
@@ -52,53 +57,54 @@
             <Grid>
               <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="160" />
+                <RowDefinition Height="180" />
               </Grid.RowDefinitions>
               <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                <Canvas Width="920" Height="500" Background="#FCFCFD">
+                <Canvas Width="1120" Height="650" Background="#FCFCFD">
                   <ItemsControl ItemsSource="{Binding GraphEdges}">
                     <ItemsControl.ItemsPanel><ItemsPanelTemplate><Canvas /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                       <DataTemplate>
-                        <Line X1="{Binding X1}" Y1="{Binding Y1}" X2="{Binding X2}" Y2="{Binding Y2}" Stroke="#426B9B" StrokeThickness="2">
-                          <Line.Style>
-                            <Style TargetType="Line">
-                              <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsStrong}" Value="False"><Setter Property="StrokeDashArray" Value="4,3" /></DataTrigger>
-                              </Style.Triggers>
-                            </Style>
-                          </Line.Style>
-                        </Line>
+                        <Line X1="{Binding X1}" Y1="{Binding Y1}" X2="{Binding X2}" Y2="{Binding Y2}" Stroke="{Binding Stroke}" StrokeDashArray="{Binding Dash}" StrokeThickness="2.2" ToolTip="{Binding AccessibleDescription}" />
                       </DataTemplate>
                     </ItemsControl.ItemTemplate>
                   </ItemsControl>
                   <ItemsControl ItemsSource="{Binding GraphNodes}">
                     <ItemsControl.ItemsPanel><ItemsPanelTemplate><Canvas /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
                     <ItemsControl.ItemContainerStyle>
-                      <Style TargetType="ContentPresenter"><Setter Property="Canvas.Left" Value="{Binding X}" /><Setter Property="Canvas.Top" Value="{Binding Y}" /></Style>
+                      <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Left" Value="{Binding X}" />
+                        <Setter Property="Canvas.Top" Value="{Binding Y}" />
+                      </Style>
                     </ItemsControl.ItemContainerStyle>
                     <ItemsControl.ItemTemplate>
                       <DataTemplate>
-                        <Button Command="{Binding DataContext.SelectNodeCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Width="160" MinHeight="58" Padding="6" HorizontalContentAlignment="Left">
+                        <Button Command="{Binding DataContext.SelectNodeCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Width="182" MinHeight="86" Padding="7" HorizontalContentAlignment="Left">
                           <StackPanel>
-                            <TextBlock Text="{Binding Label}" TextTrimming="CharacterEllipsis" FontWeight="SemiBold" />
-                            <TextBlock Text="{Binding Status}" FontSize="11" Foreground="#59636E" />
+                            <DockPanel>
+                              <TextBlock Text="{Binding Label}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Width="138" />
+                              <TextBlock Text="{Binding Badges}" DockPanel.Dock="Right" />
+                            </DockPanel>
+                            <TextBlock Text="{Binding Kind}" FontSize="11" Foreground="#475467" />
+                            <TextBlock Text="{Binding Date}" FontSize="11" Foreground="#667085" />
+                            <TextBlock Text="{Binding Confidence}" FontSize="11" Foreground="#426B9B" />
+                            <TextBlock Text="{Binding Status}" FontSize="11" Foreground="#667085" />
                           </StackPanel>
                         </Button>
                       </DataTemplate>
                     </ItemsControl.ItemTemplate>
                   </ItemsControl>
-                  <TextBlock Text="拖入一个包含 Word、Excel 或 PowerPoint 文件的文件夹开始分析" FontSize="16" Foreground="#667085" Visibility="{Binding HasAnalysis, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
+                  <TextBlock Text="拖入一个包含 Word、Excel 或 PowerPoint 文件的文件夹开始分析。" FontSize="16" Foreground="#667085" Visibility="{Binding HasAnalysis, Converter={StaticResource InverseBooleanToVisibilityConverter}}" Canvas.Left="32" Canvas.Top="32" />
                 </Canvas>
               </ScrollViewer>
               <Border Grid.Row="1" BorderBrush="#E4E7EC" BorderThickness="0,1,0,0" Padding="8">
                 <DockPanel>
-                  <TextBlock DockPanel.Dock="Top" Text="关系（点击查看改动）" FontWeight="SemiBold" />
+                  <TextBlock DockPanel.Dock="Top" Text="关系说明（实线：较强；虚线：较弱；点线：相关未证实；警示线：证据冲突）" FontSize="12" Foreground="#667085" />
                   <ListBox ItemsSource="{Binding EdgeList}" BorderThickness="0">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <Button Command="{Binding DataContext.SelectEdgeCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" HorizontalContentAlignment="Left" Margin="0,2">
-                          <TextBlock Text="{Binding Label}" />
+                        <Button Command="{Binding DataContext.SelectEdgeCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" HorizontalContentAlignment="Left" Margin="0,2" ToolTip="{Binding AccessibleDescription}">
+                          <TextBlock Text="{Binding Label}" TextWrapping="Wrap" />
                         </Button>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -107,38 +113,117 @@
               </Border>
             </Grid>
           </TabItem>
+
+          <TabItem Header="时间线">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+              <ItemsControl ItemsSource="{Binding Timeline}" Margin="14">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Grid Margin="0,4,0,14">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="132" />
+                        <ColumnDefinition Width="28" />
+                        <ColumnDefinition Width="*" />
+                      </Grid.ColumnDefinitions>
+                      <TextBlock Grid.Column="0" Text="{Binding Date}" Foreground="#475467" FontWeight="SemiBold" />
+                      <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <Ellipse Width="12" Height="12" Fill="#426B9B" />
+                        <Rectangle Width="2" Height="90" Fill="#D0D5DD" HorizontalAlignment="Center" />
+                      </StackPanel>
+                      <Button Grid.Column="2" Command="{Binding DataContext.SelectTimelineCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" HorizontalContentAlignment="Left" Padding="10">
+                        <StackPanel>
+                          <DockPanel>
+                            <TextBlock Text="{Binding File}" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding Badges}" DockPanel.Dock="Right" />
+                          </DockPanel>
+                          <TextBlock Text="{Binding Kind}" Foreground="#475467" FontSize="12" />
+                          <TextBlock Text="{Binding ParticipantSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
+                          <TextBlock Text="{Binding Environment}" Foreground="#667085" FontSize="12" />
+                          <TextBlock Text="{Binding ChangeSummary}" Foreground="#426B9B" TextWrapping="Wrap" Margin="0,4,0,0" />
+                          <TextBlock Text="{Binding Status}" Foreground="#667085" FontSize="12" />
+                        </StackPanel>
+                      </Button>
+                    </Grid>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </ScrollViewer>
+          </TabItem>
+
           <TabItem Header="参与者">
             <Grid Margin="8">
               <Grid.ColumnDefinitions><ColumnDefinition Width="260" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
               <ListBox Grid.Column="0" ItemsSource="{Binding Participants}" SelectedItem="{Binding SelectedParticipant}">
-                <ListBox.ItemTemplate><DataTemplate><StackPanel Margin="4,7"><TextBlock Text="{Binding Name}" FontWeight="SemiBold" /><TextBlock Text="{Binding Summary}" Foreground="#59636E" FontSize="12" /></StackPanel></DataTemplate></ListBox.ItemTemplate>
+                <ListBox.ItemTemplate>
+                  <DataTemplate>
+                    <StackPanel Margin="5,8">
+                      <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                      <TextBlock Text="{Binding Summary}" Foreground="#667085" FontSize="12" />
+                    </StackPanel>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
               </ListBox>
-              <TextBlock Grid.Column="1" Margin="16" Text="选择参与者以查看其 Office 证据。身份字符串并非经过认证的真实身份。" Foreground="#59636E" TextWrapping="Wrap" />
+              <TextBlock Grid.Column="1" Margin="16" Text="选择参与者以查看其对应的版本、修订、评论或元数据线索。Office 身份字符串并非经过认证的真实身份。" Foreground="#59636E" TextWrapping="Wrap" />
             </Grid>
           </TabItem>
         </TabControl>
       </Border>
 
-      <Border Grid.Column="2" Background="White" BorderBrush="#DCE1E8" BorderThickness="1" Padding="12">
-        <DockPanel>
-          <StackPanel DockPanel.Dock="Top">
-            <TextBlock Text="详情" FontSize="16" FontWeight="SemiBold" />
-            <TextBlock Text="{Binding DetailTitle}" FontWeight="SemiBold" Margin="0,9,0,2" TextWrapping="Wrap" />
-            <TextBlock Text="{Binding DetailSubtitle}" Foreground="#59636E" TextWrapping="Wrap" />
+      <Border Grid.Column="2" Background="White" BorderBrush="#DCE1E8" BorderThickness="1" Padding="14">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+          <StackPanel>
+            <TextBlock Text="信息面板" FontSize="16" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding SummaryTitle}" FontWeight="SemiBold" FontSize="15" Margin="0,10,0,3" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding SummaryText}" Foreground="#475467" TextWrapping="Wrap" />
+
+            <Expander Header="主要证据" IsExpanded="True" Margin="0,14,0,0">
+              <ItemsControl ItemsSource="{Binding SupportingEvidence}">
+                <ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" Foreground="#067647" /></DataTemplate></ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Expander>
+
+            <Expander Header="不确定性与警告" IsExpanded="True" Margin="0,8,0,0">
+              <ItemsControl ItemsSource="{Binding ConcernEvidence}">
+                <ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" Foreground="#9B3A1B" /></DataTemplate></ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Expander>
+
+            <Expander Header="文件夹中的其他警告" Margin="0,8,0,0">
+              <ItemsControl ItemsSource="{Binding Warnings}">
+                <ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" Foreground="#9B3A1B" /></DataTemplate></ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Expander>
+
+            <TextBlock Text="{Binding ChangeTitle}" FontWeight="SemiBold" Margin="0,16,0,6" />
+            <ListView ItemsSource="{Binding DiffRows}" BorderBrush="#D0D5DD" BorderThickness="1">
+              <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsRemoval}" Value="True"><Setter Property="Background" Value="#FEF3F2" /><Setter Property="Foreground" Value="#B42318" /></DataTrigger>
+                    <DataTrigger Binding="{Binding IsAddition}" Value="True"><Setter Property="Background" Value="#ECFDF3" /><Setter Property="Foreground" Value="#067647" /></DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </ListView.ItemContainerStyle>
+              <ListView.View>
+                <GridView>
+                  <GridViewColumn Header="类型" Width="54" DisplayMemberBinding="{Binding Category}" />
+                  <GridViewColumn Header="位置" Width="90" DisplayMemberBinding="{Binding Location}" />
+                  <GridViewColumn Header="旧" Width="84" DisplayMemberBinding="{Binding Before}" />
+                  <GridViewColumn Header="新" Width="84" DisplayMemberBinding="{Binding After}" />
+                </GridView>
+              </ListView.View>
+            </ListView>
+            <ItemsControl ItemsSource="{Binding DiffRows}" Margin="0,4,0,0">
+              <ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding Detail}" TextWrapping="Wrap" FontSize="12" Foreground="#667085" /></DataTemplate></ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Expander Header="技术详情（测试模式）" Margin="0,14,0,0">
+              <ItemsControl ItemsSource="{Binding TechnicalDetails}">
+                <ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" FontFamily="Consolas" FontSize="11" /></DataTemplate></ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Expander>
           </StackPanel>
-          <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <StackPanel Margin="0,12,0,0">
-              <TextBlock Text="证据与改动" FontWeight="SemiBold" />
-              <ItemsControl ItemsSource="{Binding DetailLines}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
-              <Expander Header="测试信息" Margin="0,12,0,0">
-                <ItemsControl ItemsSource="{Binding TestLines}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" FontFamily="Consolas" FontSize="11" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
-              </Expander>
-              <Expander Header="警告与未支持内容" IsExpanded="True" Margin="0,12,0,0">
-                <ItemsControl ItemsSource="{Binding Warnings}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Foreground="#9B3A1B" Margin="0,3" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
-              </Expander>
-            </StackPanel>
-          </ScrollViewer>
-        </DockPanel>
+        </ScrollViewer>
       </Border>
     </Grid>
   </Grid>

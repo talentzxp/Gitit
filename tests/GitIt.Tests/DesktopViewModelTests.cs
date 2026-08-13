@@ -33,4 +33,20 @@ public sealed class DesktopViewModelTests
         Assert.NotEmpty(viewModel.EdgeList);
         Assert.NotEmpty(viewModel.Participants);
     }
+
+    [Fact]
+    public void Human_centered_views_keep_family_names_timeline_and_core_diff_separate()
+    {
+        var dataset = new GroundTruthGenerator().Create();
+        var viewModel = new MainViewModel();
+        viewModel.Load(new DesktopAnalysisAdapter().Analyze(dataset.Root));
+
+        Assert.All(viewModel.Families, family => Assert.False(family.Name.StartsWith("文档家族", StringComparison.Ordinal)));
+        Assert.NotEmpty(viewModel.Timeline);
+        Assert.All(viewModel.Timeline, item => Assert.NotEmpty(item.Date));
+        var relation = Assert.IsType<GraphEdgeViewModel>(viewModel.EdgeList.First());
+        viewModel.SelectEdgeCommand.Execute(relation);
+        Assert.NotEmpty(viewModel.SupportingEvidence);
+        Assert.NotEmpty(viewModel.DiffRows);
+    }
 }

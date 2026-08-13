@@ -1,0 +1,6062 @@
+﻿{
+  "schemaVersion": "GitIt Analysis Result v1",
+  "project": {
+    "root": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo",
+    "analyzedAt": "2026-08-13T08:06:20.2521861+00:00",
+    "engineVersion": "0.0.4"
+  },
+  "documentFamilies": [
+    {
+      "id": "family-1",
+      "kind": "Docx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\abc123.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_09.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_10.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_11.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_12.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_13.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_14.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_15.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_16.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_17.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_18.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_19.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_20.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC82.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\wechat\\report.docx"
+      ],
+      "detectionBasis": "lineage/duplicate/content-evidence"
+    },
+    {
+      "id": "family-2",
+      "kind": "Docx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\large-rewrite\\executive-rewrite.docx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    },
+    {
+      "id": "family-3",
+      "kind": "Docx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\reconstructed\\copy-paste-rebuild.docx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    },
+    {
+      "id": "family-4",
+      "kind": "Pptx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\slides\\deck-v1.pptx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    },
+    {
+      "id": "family-5",
+      "kind": "Pptx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\slides\\deck-v2.pptx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    },
+    {
+      "id": "family-6",
+      "kind": "Xlsx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\spreadsheets\\data-v1.xlsx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    },
+    {
+      "id": "family-7",
+      "kind": "Xlsx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\spreadsheets\\data-v2.xlsx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    },
+    {
+      "id": "family-8",
+      "kind": "Docx",
+      "versionIds": [
+        "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\unrelated\\abc123.docx"
+      ],
+      "detectionBasis": "no corroborated relation"
+    }
+  ],
+  "versions": [
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "F16A54F92327067E3FB901DBB3B166896DB84D4A7052918FC89CBCC3D3BC7B7F",
+      "fingerprint": {
+        "paragraphs": "8",
+        "tables": "1",
+        "bodyHash": "8A440DE7DF9A04E7",
+        "styleHash": "12BD493D47080E19",
+        "rsidCount": "5",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "2A2A3FEA57491AEC22DC1510141E8BFC62F716E00B5D5331B96A898247D1C5AE",
+      "fingerprint": {
+        "paragraphs": "13",
+        "tables": "1",
+        "bodyHash": "2D4208F2AB7F9521",
+        "styleHash": "A4BE1B38031503FD",
+        "rsidCount": "9",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "081FD06D0809F1C2FEA6CBD9D58664B7C8EEAE885B896342171B8EFD085272FB",
+      "fingerprint": {
+        "paragraphs": "13",
+        "tables": "1",
+        "bodyHash": "4B15B45F1EA7160E",
+        "styleHash": "A4BE1B38031503FD",
+        "rsidCount": "9",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\large-rewrite\\executive-rewrite.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\large-rewrite\\executive-rewrite.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "286BA693E58B41B58A58F9EED876995D453EBA101D34145121D3A72A190034B4",
+      "fingerprint": {
+        "paragraphs": "63",
+        "tables": "1",
+        "bodyHash": "45893E0A13E22199",
+        "styleHash": "E44628E0F24B2B8B",
+        "rsidCount": "21",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\abc123.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\abc123.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "7B3E0090B58EA6CB4002988F97BD1C740FDC716D0F125B2F7B27CF7F7840723A",
+      "fingerprint": {
+        "paragraphs": "10",
+        "tables": "1",
+        "bodyHash": "A2460A8E6931CF49",
+        "styleHash": "EC8B18346527A1D1",
+        "rsidCount": "7",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "1C2440427A85CF220F8F96D9C5A39AA3E9C8B3D7F88B8EAC45DFE5D790CE98D6",
+      "fingerprint": {
+        "paragraphs": "11",
+        "tables": "1",
+        "bodyHash": "8D77A11FE0A1AF6F",
+        "styleHash": "A23B5103F33B390D",
+        "rsidCount": "8",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_09.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_09.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "B0403FEF928D4C9F45820714784450C9279CED63A2BA1B6B176553F7B055D027",
+      "fingerprint": {
+        "paragraphs": "12",
+        "tables": "1",
+        "bodyHash": "3F599D35053ADBB5",
+        "styleHash": "480880424288D536",
+        "rsidCount": "9",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_10.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_10.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "458A8D7F67079F66BFAAFA1FBC67D7892F45FFE8A2B01868A91518C457FB625B",
+      "fingerprint": {
+        "paragraphs": "13",
+        "tables": "1",
+        "bodyHash": "EFD15A4F9D064E88",
+        "styleHash": "A4BE1B38031503FD",
+        "rsidCount": "10",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_11.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_11.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "215CE7CE925D32EDF5DC6EBF4FCC92F9089BE34A594A494D59AC25B21F8FDDAF",
+      "fingerprint": {
+        "paragraphs": "14",
+        "tables": "1",
+        "bodyHash": "3ADFDEB5FB8688EB",
+        "styleHash": "68C99F8214D8CE21",
+        "rsidCount": "11",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_12.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_12.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "F98EAF8DF3141E41019A5C5D369BF78D338DA4360D99027AEB4CF77C19240E10",
+      "fingerprint": {
+        "paragraphs": "15",
+        "tables": "1",
+        "bodyHash": "2B17BACCD660CCF8",
+        "styleHash": "9DCF61567A2F15F8",
+        "rsidCount": "12",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_13.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_13.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "EE8D5CBE0D2BB865238FEA99EFD992C6308BEDCA2332A4DE1D0C12B61B9A86D0",
+      "fingerprint": {
+        "paragraphs": "16",
+        "tables": "1",
+        "bodyHash": "199E6C2AC097CE8E",
+        "styleHash": "86FCF6A50AAF62F1",
+        "rsidCount": "13",
+        "trackedRevisionCount": "0"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_14.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_14.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "C263029EBB4BD5B81B5DF7EEA20D9CB7F98326CDF4393B4BC4471A725C6B1CF9",
+      "fingerprint": {
+        "paragraphs": "17",
+        "tables": "1",
+        "bodyHash": "DE6386539C82ED28",
+        "styleHash": "06491E6F04FE3930",
+        "rsidCount": "14",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_15.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_15.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "7760EBDB84312FC8C26D3299BD8B021377E623D4B631B9A081C3EBC5170F78A0",
+      "fingerprint": {
+        "paragraphs": "18",
+        "tables": "1",
+        "bodyHash": "F9201116EF0817C7",
+        "styleHash": "87E628774BE70743",
+        "rsidCount": "15",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_16.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_16.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "3F783D5639A3DC84020A45DD61DEF2B35E379A631599CD636DE924981FFEEEE3",
+      "fingerprint": {
+        "paragraphs": "19",
+        "tables": "1",
+        "bodyHash": "97462D5385913138",
+        "styleHash": "090E274EFF22ADEE",
+        "rsidCount": "16",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_17.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_17.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "D21323B7226CB40F6F2B7F0876B2D8818CADCA6BDC56C311E1B925330164C9DE",
+      "fingerprint": {
+        "paragraphs": "20",
+        "tables": "1",
+        "bodyHash": "A8B96A859F7B4D58",
+        "styleHash": "E8C4E82000E97D25",
+        "rsidCount": "17",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_18.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_18.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "A4953F89B520A8A0C0A5DA9B23CC001FA00E41904B3DB6EBCEABB70DDB2BB46B",
+      "fingerprint": {
+        "paragraphs": "21",
+        "tables": "1",
+        "bodyHash": "596C8C569968C4CB",
+        "styleHash": "9789F60AEA6966D5",
+        "rsidCount": "18",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_19.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_19.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "041A6C3991CD77C948A3B46AF9AB26F8C09B82A3046B491EDA1DF3F88851257F",
+      "fingerprint": {
+        "paragraphs": "22",
+        "tables": "1",
+        "bodyHash": "7415310EDBB01C50",
+        "styleHash": "BF51AC9F25743E57",
+        "rsidCount": "19",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_20.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_20.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "E984F1233283178BD147F62F3DAE4F64EECFF49D3DD00E743045FDAE32F78720",
+      "fingerprint": {
+        "paragraphs": "23",
+        "tables": "1",
+        "bodyHash": "823E4C245BD7E435",
+        "styleHash": "F9BA0824A639A3BF",
+        "rsidCount": "20",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "18917AD2815342854513CFECA2181E7BB39F2EB8FCC2A1E35C17313887541D3E",
+      "fingerprint": {
+        "paragraphs": "6",
+        "tables": "1",
+        "bodyHash": "644697A63F66DD75",
+        "styleHash": "32C1BD0C1C53B6DF",
+        "rsidCount": "3",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "897EA78A693CBAFDE5074EADC6E20C1DF256F32EA86E54973E5D7EE58F1DDC0C",
+      "fingerprint": {
+        "paragraphs": "4",
+        "tables": "1",
+        "bodyHash": "91C45263189F625F",
+        "styleHash": "DCA4E85FF1DAD772",
+        "rsidCount": "1",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "7E64EB5B146857AEEF8707A0A8C9BD0CD60C40A4EDA89EDCDAB71DB4CE03F2DC",
+      "fingerprint": {
+        "paragraphs": "5",
+        "tables": "1",
+        "bodyHash": "73FE91F7850599FC",
+        "styleHash": "2CE321A63DE07C57",
+        "rsidCount": "2",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "78DD9DA6AADC41E492971610F297212AF02A6613B0AE99C521CA8F760819F9DD",
+      "fingerprint": {
+        "paragraphs": "7",
+        "tables": "1",
+        "bodyHash": "67DB42C0950FCFB2",
+        "styleHash": "484D7D137E420C2D",
+        "rsidCount": "4",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC82.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC82.docx",
+      "kind": "Docx",
+      "duplicateOf": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+      "fileHash": "F16A54F92327067E3FB901DBB3B166896DB84D4A7052918FC89CBCC3D3BC7B7F",
+      "fingerprint": {
+        "paragraphs": "8",
+        "tables": "1",
+        "bodyHash": "8A440DE7DF9A04E7",
+        "styleHash": "12BD493D47080E19",
+        "rsidCount": "5",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "E6A45A83B1BADB3786614192E7393BD5814517C9C0944967AC32F0D8CFD29F5C",
+      "fingerprint": {
+        "paragraphs": "9",
+        "tables": "1",
+        "bodyHash": "CDD7C9D58EC27423",
+        "styleHash": "2C2F7C8FD16C2069",
+        "rsidCount": "6",
+        "trackedRevisionCount": "1"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\reconstructed\\copy-paste-rebuild.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\reconstructed\\copy-paste-rebuild.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "567A858184094E521ADD100C24D407B13F3AACFAF9B5CE96505B4C6E408D735C",
+      "fingerprint": {
+        "paragraphs": "4",
+        "tables": "1",
+        "bodyHash": "1C1B1AF14D459FC8",
+        "styleHash": "DCA4E85FF1DAD772",
+        "rsidCount": "1",
+        "trackedRevisionCount": "0"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\slides\\deck-v1.pptx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\slides\\deck-v1.pptx",
+      "kind": "Pptx",
+      "duplicateOf": null,
+      "fileHash": "3AF1FFBC3D8F8866511EA72949D7031FE724D455EF564C4C9C098DF64601BD73",
+      "fingerprint": {
+        "slides": "1",
+        "shapes": "1",
+        "themeHash": "E3B0C44298FC1C14",
+        "slideTextHash": "DB4972BE252C4172"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\slides\\deck-v2.pptx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\slides\\deck-v2.pptx",
+      "kind": "Pptx",
+      "duplicateOf": null,
+      "fileHash": "D89D841382BB83F97C6ED6FA859CEA79AEFA2DEE104F1210812A1B47053D1640",
+      "fingerprint": {
+        "slides": "1",
+        "shapes": "1",
+        "themeHash": "E3B0C44298FC1C14",
+        "slideTextHash": "7305777B0DE908C4"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\spreadsheets\\data-v1.xlsx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\spreadsheets\\data-v1.xlsx",
+      "kind": "Xlsx",
+      "duplicateOf": null,
+      "fileHash": "13F97F02E0E139CC6ACB26F4D1D0C80EAA26500958489F7F339D690351CFCB47",
+      "fingerprint": {
+        "sheets": "1",
+        "cells": "1",
+        "formulas": "0",
+        "sheetNamesHash": "0197642A5179F9D0",
+        "workbookHash": "DBA381D3F63DF62C"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\spreadsheets\\data-v2.xlsx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\spreadsheets\\data-v2.xlsx",
+      "kind": "Xlsx",
+      "duplicateOf": null,
+      "fileHash": "61C5FEFD1F04DD3B444F140A1A9A470303635B38E456BABC0A485293900BAE60",
+      "fingerprint": {
+        "sheets": "2",
+        "cells": "1",
+        "formulas": "0",
+        "sheetNamesHash": "CBA8C30CB288B239",
+        "workbookHash": "15B7F6D116AC12FC"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\unrelated\\abc123.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\unrelated\\abc123.docx",
+      "kind": "Docx",
+      "duplicateOf": null,
+      "fileHash": "15A2B9628E9D3423F037D2CC0D45C179522DEC242BA25859B50DF71794DAC37B",
+      "fingerprint": {
+        "paragraphs": "4",
+        "tables": "1",
+        "bodyHash": "3403644A750A8A6C",
+        "styleHash": "DCA4E85FF1DAD772",
+        "rsidCount": "1",
+        "trackedRevisionCount": "0"
+      }
+    },
+    {
+      "id": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\wechat\\report.docx",
+      "path": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\wechat\\report.docx",
+      "kind": "Docx",
+      "duplicateOf": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+      "fileHash": "F16A54F92327067E3FB901DBB3B166896DB84D4A7052918FC89CBCC3D3BC7B7F",
+      "fingerprint": {
+        "paragraphs": "8",
+        "tables": "1",
+        "bodyHash": "8A440DE7DF9A04E7",
+        "styleHash": "12BD493D47080E19",
+        "rsidCount": "5",
+        "trackedRevisionCount": "1"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+      "confidence": 0.85,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Medium",
+          "score": 0.124,
+          "detail": "Structure similarity is 89%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 4 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 3.4,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 89%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "confidence": 0.79,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.25,
+          "detail": "Normalized content similarity is 89%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Medium",
+          "score": 0.12,
+          "detail": "Structure similarity is 86%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 8 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.03,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 6.799999999999999,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 86%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "confidence": 0.78,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Medium",
+          "score": 0.243,
+          "detail": "Normalized content similarity is 87%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Medium",
+          "score": 0.12,
+          "detail": "Structure similarity is 86%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 8 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.03,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 6.799999999999999,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 86%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\abc123.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.127,
+          "detail": "Structure similarity is 91%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 6 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 5.1,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 91%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\abc123.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+      "confidence": 0.84,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.128,
+          "detail": "Structure similarity is 92%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 7 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Conflicting",
+          "score": 0,
+          "detail": "Target timestamp is earlier than source timestamp; clock/copy anomalies are possible.",
+          "isConflict": true
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 5.949999999999999,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 92%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": [
+        "Timestamp conflicts with this direction and was not used as a hard ordering rule."
+      ]
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_08.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_09.docx",
+      "confidence": 0.87,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.129,
+          "detail": "Structure similarity is 92%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 8 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 6.799999999999999,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 92%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_09.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_10.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.272,
+          "detail": "Normalized content similarity is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.13,
+          "detail": "Structure similarity is 93%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 9 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 7.649999999999999,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 93%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_10.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_11.docx",
+      "confidence": 0.85,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.131,
+          "detail": "Structure similarity is 93%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 10 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 8.499999999999998,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 93%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_11.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_12.docx",
+      "confidence": 0.85,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.131,
+          "detail": "Structure similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 11 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 9.349999999999998,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 94%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_12.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_13.docx",
+      "confidence": 0.79,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.132,
+          "detail": "Structure similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 12 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 10.199999999999998,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 94%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_13.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_14.docx",
+      "confidence": 0.91,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.132,
+          "detail": "Structure similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 13 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "revisionEvidence",
+          "strength": "Strong",
+          "score": 0.12,
+          "detail": "Target carries tracked-change evidence beyond the source profile.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 11.049999999999997,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 94%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_14.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_15.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.133,
+          "detail": "Structure similarity is 95%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 14 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 11.899999999999997,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 95%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_15.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_16.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.133,
+          "detail": "Structure similarity is 95%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 15 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 12.749999999999996,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 95%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_16.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_17.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.133,
+          "detail": "Structure similarity is 95%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 16 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 13.599999999999996,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 95%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_17.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_18.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.134,
+          "detail": "Structure similarity is 95%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 17 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 14.449999999999996,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 95%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_18.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_19.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.134,
+          "detail": "Structure similarity is 96%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 18 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 15.299999999999995,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 96%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_19.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\artifact_20.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.264,
+          "detail": "Normalized content similarity is 94%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.134,
+          "detail": "Structure similarity is 96%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.068,
+          "detail": "Source content retained by target is 97%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 19 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "filenameEvidence",
+          "strength": "Weak",
+          "score": 0.01,
+          "detail": "Normalized file names match; file names are never decisive.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 16.149999999999995,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:filenameStem",
+          "strength": "Weak",
+          "score": 0.2,
+          "detail": "Normalized filename stem matches.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 96%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "confidence": 0.85,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Medium",
+          "score": 0.12,
+          "detail": "Structure similarity is 86%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 2 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 1.7,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 86%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+      "confidence": 0.85,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Medium",
+          "score": 0.117,
+          "detail": "Structure similarity is 83%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 1 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 0.85,
+          "detail": "Shares RSID edit-session trace(s).",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 83%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8.docx",
+      "confidence": 0.85,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Medium",
+          "score": 0.123,
+          "detail": "Structure similarity is 88%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 3 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 2.55,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 88%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "from": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\backup\\report.docx",
+      "to": "Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+      "confidence": 0.86,
+      "status": "Probable",
+      "evidence": [
+        {
+          "type": "contentSimilarity",
+          "strength": "Strong",
+          "score": 0.28,
+          "detail": "Normalized content similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "structureSimilarity",
+          "strength": "Strong",
+          "score": 0.126,
+          "detail": "Structure similarity is 90%.",
+          "isConflict": false
+        },
+        {
+          "type": "styleSimilarity",
+          "strength": "Medium",
+          "score": 0.1,
+          "detail": "Style similarity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "containmentEvidence",
+          "strength": "Strong",
+          "score": 0.07,
+          "detail": "Source content retained by target is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "rsidEvidence",
+          "strength": "Strong",
+          "score": 0.2,
+          "detail": "Shares 5 RSID value(s); edit-session continuity is 100%.",
+          "isConflict": false
+        },
+        {
+          "type": "metadataEvidence",
+          "strength": "Medium",
+          "score": 0.06,
+          "detail": "Creator and/or LastModifiedBy values overlap.",
+          "isConflict": false
+        },
+        {
+          "type": "timestampEvidence",
+          "strength": "Weak",
+          "score": 0.02,
+          "detail": "Parent timestamp is not later than child timestamp.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:sharedRsid",
+          "strength": "Weak",
+          "score": 4.25,
+          "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:rsidProgression",
+          "strength": "Weak",
+          "score": 1,
+          "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:metadataHint",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Creator metadata matches; a weak retrieval hint.",
+          "isConflict": false
+        },
+        {
+          "type": "candidateSelection:coarseStructure",
+          "strength": "Weak",
+          "score": 0.1,
+          "detail": "Coarse document size/structure ratio is 90%.",
+          "isConflict": false
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "changes": [],
+  "participants": [
+    {
+      "id": "participant-1",
+      "displayName": "Alice",
+      "evidence": [
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\backup\\report.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\backup\\report.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\backup\\report.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\large-rewrite\\executive-rewrite.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\large-rewrite\\executive-rewrite.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\large-rewrite\\executive-rewrite.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\abc123.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\abc123.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\abc123.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_08.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_08.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_08.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_09.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_09.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_09.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_10.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_10.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_10.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_11.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_11.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_11.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_12.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_12.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_12.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_14.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_14.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_14.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_15.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_15.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_15.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_16.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_16.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_16.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_17.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_17.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_17.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_18.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_18.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_18.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_19.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_19.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_19.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_20.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_20.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\artifact_20.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u62A5\u544A.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u62A5\u544A.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u62A5\u544A.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC8.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC8.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC8.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC82.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC82.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC82.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\slides\\deck-v1.pptx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\slides\\deck-v2.pptx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\spreadsheets\\data-v1.xlsx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\spreadsheets\\data-v2.xlsx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\wechat\\report.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\wechat\\report.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Alice",
+          "documentVersion": "demo\\wechat\\report.docx",
+          "source": "wordprocessing/document.xml",
+          "evidenceType": "revision-author",
+          "strength": "Strong",
+          "detail": "Author attribute on a tracked change."
+        }
+      ],
+      "identityCandidates": []
+    },
+    {
+      "id": "participant-2",
+      "displayName": "Editor B",
+      "evidence": [
+        {
+          "value": "Editor B",
+          "documentVersion": "demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        }
+      ],
+      "identityCandidates": []
+    },
+    {
+      "id": "participant-3",
+      "displayName": "Expert",
+      "evidence": [
+        {
+          "value": "Expert",
+          "documentVersion": "demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        }
+      ],
+      "identityCandidates": []
+    },
+    {
+      "id": "participant-4",
+      "displayName": "Other",
+      "evidence": [
+        {
+          "value": "Other",
+          "documentVersion": "demo\\unrelated\\abc123.docx",
+          "source": "core.xml",
+          "evidenceType": "creator",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        },
+        {
+          "value": "Other",
+          "documentVersion": "demo\\unrelated\\abc123.docx",
+          "source": "core.xml",
+          "evidenceType": "lastModifiedBy",
+          "strength": "Medium",
+          "detail": "Office core property; identity is not authenticated."
+        }
+      ],
+      "identityCandidates": []
+    },
+    {
+      "id": "participant-5",
+      "displayName": "Reviewer",
+      "evidence": [
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\backup\\report.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\branches\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\branches\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\large-rewrite\\executive-rewrite.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\abc123.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_08.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_09.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_10.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_11.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_12.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_14.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_15.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_16.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_17.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_18.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_19.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\artifact_20.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\\u4E13\u5BB6\u4FEE\u6539\u7A3F.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\\u62A5\u544A.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\\u62A5\u544A\u4FEE\u6539.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\\u6700\u7EC8.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\\u6700\u7EC82.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\main\\\u6700\u7EC8\u6700\u7EC8\u7248.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        },
+        {
+          "value": "Reviewer",
+          "documentVersion": "demo\\wechat\\report.docx",
+          "source": "word/comments.xml",
+          "evidenceType": "comment-author",
+          "strength": "ParticipationOnly",
+          "detail": "Comment authorship proves review participation, not document editing."
+        }
+      ],
+      "identityCandidates": []
+    }
+  ],
+  "evidence": [
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Medium",
+      "score": 0.124,
+      "detail": "Structure similarity is 89%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 4 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 3.4,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 89%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.25,
+      "detail": "Normalized content similarity is 89%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Medium",
+      "score": 0.12,
+      "detail": "Structure similarity is 86%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 8 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.03,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 6.799999999999999,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 86%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Medium",
+      "score": 0.243,
+      "detail": "Normalized content similarity is 87%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Medium",
+      "score": 0.12,
+      "detail": "Structure similarity is 86%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 8 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.03,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 6.799999999999999,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 86%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.127,
+      "detail": "Structure similarity is 91%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 6 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 5.1,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 91%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.128,
+      "detail": "Structure similarity is 92%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 7 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Conflicting",
+      "score": 0,
+      "detail": "Target timestamp is earlier than source timestamp; clock/copy anomalies are possible.",
+      "isConflict": true
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 5.949999999999999,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 92%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.129,
+      "detail": "Structure similarity is 92%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 8 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 6.799999999999999,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 92%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.272,
+      "detail": "Normalized content similarity is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.13,
+      "detail": "Structure similarity is 93%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 9 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 7.649999999999999,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 93%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.131,
+      "detail": "Structure similarity is 93%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 10 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 8.499999999999998,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 93%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.131,
+      "detail": "Structure similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 11 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 9.349999999999998,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.132,
+      "detail": "Structure similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 12 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 10.199999999999998,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.132,
+      "detail": "Structure similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 13 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "revisionEvidence",
+      "strength": "Strong",
+      "score": 0.12,
+      "detail": "Target carries tracked-change evidence beyond the source profile.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 11.049999999999997,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.133,
+      "detail": "Structure similarity is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 14 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 11.899999999999997,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.133,
+      "detail": "Structure similarity is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 15 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 12.749999999999996,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.133,
+      "detail": "Structure similarity is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 16 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 13.599999999999996,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.134,
+      "detail": "Structure similarity is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 17 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 14.449999999999996,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 95%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.134,
+      "detail": "Structure similarity is 96%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 18 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 15.299999999999995,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 96%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.264,
+      "detail": "Normalized content similarity is 94%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.134,
+      "detail": "Structure similarity is 96%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.068,
+      "detail": "Source content retained by target is 97%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 19 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "filenameEvidence",
+      "strength": "Weak",
+      "score": 0.01,
+      "detail": "Normalized file names match; file names are never decisive.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 16.149999999999995,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:filenameStem",
+      "strength": "Weak",
+      "score": 0.2,
+      "detail": "Normalized filename stem matches.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 96%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Medium",
+      "score": 0.12,
+      "detail": "Structure similarity is 86%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 2 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 1.7,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 86%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Medium",
+      "score": 0.117,
+      "detail": "Structure similarity is 83%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 1 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 0.85,
+      "detail": "Shares RSID edit-session trace(s).",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 83%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Medium",
+      "score": 0.123,
+      "detail": "Structure similarity is 88%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 3 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 2.55,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 88%.",
+      "isConflict": false
+    },
+    {
+      "type": "contentSimilarity",
+      "strength": "Strong",
+      "score": 0.28,
+      "detail": "Normalized content similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "structureSimilarity",
+      "strength": "Strong",
+      "score": 0.126,
+      "detail": "Structure similarity is 90%.",
+      "isConflict": false
+    },
+    {
+      "type": "styleSimilarity",
+      "strength": "Medium",
+      "score": 0.1,
+      "detail": "Style similarity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "containmentEvidence",
+      "strength": "Strong",
+      "score": 0.07,
+      "detail": "Source content retained by target is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "rsidEvidence",
+      "strength": "Strong",
+      "score": 0.2,
+      "detail": "Shares 5 RSID value(s); edit-session continuity is 100%.",
+      "isConflict": false
+    },
+    {
+      "type": "metadataEvidence",
+      "strength": "Medium",
+      "score": 0.06,
+      "detail": "Creator and/or LastModifiedBy values overlap.",
+      "isConflict": false
+    },
+    {
+      "type": "timestampEvidence",
+      "strength": "Weak",
+      "score": 0.02,
+      "detail": "Parent timestamp is not later than child timestamp.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:sharedRsid",
+      "strength": "Weak",
+      "score": 4.25,
+      "detail": "Shares RSID edit-session trace(s). Multiple matching traces increase retrieval priority.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:rsidProgression",
+      "strength": "Weak",
+      "score": 1,
+      "detail": "Source RSID set is a proper subset of the target, consistent with an earlier edit session.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:metadataHint",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Creator metadata matches; a weak retrieval hint.",
+      "isConflict": false
+    },
+    {
+      "type": "candidateSelection:coarseStructure",
+      "strength": "Weak",
+      "score": 0.1,
+      "detail": "Coarse document size/structure ratio is 90%.",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 8 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 5 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 13 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 9 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 13 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 9 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 63 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 21 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 10 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 7 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 11 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 8 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 12 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 9 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 13 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 10 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 14 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 11 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 15 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 12 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 16 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 13 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 17 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 14 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 18 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 15 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 19 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 16 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 20 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 17 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 21 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 18 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 22 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 19 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 23 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 20 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 6 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 3 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 4 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 1 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 5 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 2 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 7 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 4 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 8 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 5 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 9 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 6 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 4 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 1 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "presentation",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 1 slide(s) and 1 text-capable shape(s).",
+      "isConflict": false
+    },
+    {
+      "type": "presentation",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 1 slide(s) and 1 text-capable shape(s).",
+      "isConflict": false
+    },
+    {
+      "type": "workbook",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 1 worksheet(s) and 1 stored cell(s).",
+      "isConflict": false
+    },
+    {
+      "type": "workbook",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 2 worksheet(s) and 1 stored cell(s).",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 4 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 1 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "content",
+      "strength": "Medium",
+      "score": 0.5,
+      "detail": "Read 8 body paragraphs and 1 top-level tables.",
+      "isConflict": false
+    },
+    {
+      "type": "metadata",
+      "strength": "Medium",
+      "score": 0.35,
+      "detail": "Read core package properties.",
+      "isConflict": false
+    },
+    {
+      "type": "rsid",
+      "strength": "Medium",
+      "score": 0.6,
+      "detail": "Found 5 distinct RSID values; they are editing traces, not people.",
+      "isConflict": false
+    },
+    {
+      "type": "revision",
+      "strength": "Strong",
+      "score": 0.85,
+      "detail": "Found 1 tracked-change elements.",
+      "isConflict": false
+    },
+    {
+      "type": "comment",
+      "strength": "ParticipationOnly",
+      "score": 0.8,
+      "detail": "Found 1 comment author identity value(s).",
+      "isConflict": false
+    }
+  ],
+  "warnings": [
+    "Related but unproven: Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\main\\\u62A5\u544A.docx -\u003E Z:\\zzzxp\\Z_zxp\\Gitit\\demo\\reconstructed\\copy-paste-rebuild.docx"
+  ],
+  "unsupportedFeatures": [
+    "Track Changes absent; revision continuity is unavailable.",
+    "Author metadata removed or absent; identity evidence is degraded."
+  ],
+  "performance": [
+    {
+      "operation": "scan-and-fingerprint",
+      "milliseconds": 742.195,
+      "managedBytes": 15962688
+    },
+    {
+      "operation": "candidate-generation-and-lineage",
+      "milliseconds": 39.3952,
+      "managedBytes": 0
+    },
+    {
+      "operation": "deep-diff",
+      "milliseconds": 0.005,
+      "managedBytes": 0
+    }
+  ]
+}

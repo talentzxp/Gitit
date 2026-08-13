@@ -18,6 +18,17 @@ public partial class MainWindow : Window
         if (dialog.ShowDialog() == Forms.DialogResult.OK) await viewModel.AnalyzeFolderAsync(dialog.SelectedPath);
     }
 
+    private async void OpenDemo_Click(object sender, RoutedEventArgs eventArgs)
+    {
+        var demo = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "demo"));
+        if (!System.IO.Directory.Exists(demo))
+        {
+            viewModel.ShowMessage("演示数据尚未生成。请在仓库根目录运行：dotnet run --project src/GitIt.Benchmarks -- demo");
+            return;
+        }
+        await viewModel.AnalyzeFolderAsync(demo);
+    }
+
     private async void DropArea_Drop(object sender, System.Windows.DragEventArgs eventArgs)
     {
         if (eventArgs.Data.GetData(System.Windows.DataFormats.FileDrop) is not string[] paths)
