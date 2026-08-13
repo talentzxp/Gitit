@@ -26,6 +26,8 @@ public sealed class OfficeScanner
         foreach (var path in Directory.EnumerateFiles(folder, "*", SearchOption.AllDirectories))
         {
             if (!Kinds.TryGetValue(Path.GetExtension(path), out var kind)) continue;
+            // Office lock files are transient working-state artifacts, not document versions.
+            if (Path.GetFileName(path).StartsWith("~$", StringComparison.Ordinal)) continue;
             try { documents.Add(Read(path, kind)); }
             catch (Exception ex) when (ex is IOException or OpenXmlPackageException or InvalidDataException)
             { issues.Add(new ScanIssue(path, ex.Message)); }

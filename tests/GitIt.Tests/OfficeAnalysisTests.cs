@@ -24,6 +24,18 @@ public sealed class OfficeAnalysisTests
     }
 
     [Fact]
+    public void Scan_skips_transient_office_lock_files()
+    {
+        using var samples = SampleOfficeFactory.Create();
+        File.Copy(samples.V1, Path.Combine(samples.Folder, "~$report_v1.docx"));
+
+        var result = new OfficeScanner().Scan(samples.Folder);
+
+        Assert.Equal(4, result.Documents.Count);
+        Assert.DoesNotContain(result.Documents, item => Path.GetFileName(item.Path).StartsWith("~$", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public void Diff_reports_content_format_structure_and_source_evidence()
     {
         using var samples = SampleOfficeFactory.Create();

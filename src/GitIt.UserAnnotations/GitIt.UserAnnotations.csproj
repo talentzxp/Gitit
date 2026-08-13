@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\GitIt.Core\GitIt.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -8,5 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\GitIt.Core\GitIt.Core.csproj" />
+    <ProjectReference Include="..\GitIt.UserAnnotations\GitIt.UserAnnotations.csproj" />
   </ItemGroup>
 </Project>

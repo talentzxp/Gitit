@@ -1,4 +1,4 @@
-# GitIt v0.0.6
+# GitIt v0.0.7 — Human Guided Document History
 
 GitIt is a local-first, evidence-led Office Document Lineage Engine. It does not invent a history that an Office package did not preserve: direct parent edges require corroboration; content-only copies remain **related but unproven**; timestamps are supporting or conflicting evidence, never a hard ordering rule.
 
@@ -24,7 +24,7 @@ All CLI commands accept `--json`. The stable renderer contract is [GitIt Analysi
 
 `gitit explain <folder> <version-or-file> [--json]` gives the right-panel-ready explanation for one version: selected parent, alternatives, evidence, conflicts, and participation evidence. Run the synthetic benchmark runner with `dotnet run --project src/GitIt.Benchmarks`; it produces `outputs/benchmark-report.json`, `outputs/benchmark-report.md`, and `outputs/REVIEW_SUMMARY_v0.0.4.md`. After manually preparing authorized files, run `dotnet run --project src/GitIt.Benchmarks -- real real-world-corpus` to generate `outputs/REAL_CORPUS_REVIEW.md`.
 
-`GitIt.Desktop` is a Windows-only WPF visual test harness. It imports a folder through the same Core engine and presents human-readable family names, a version lineage view, a timeline, evidence, semantic Diff, participants, warnings, and technical provenance. It does not recalculate Core scores or infer editing environments. Run `dotnet run --project src/GitIt.Benchmarks -- demo` to create an isolated synthetic GUI demonstration under `demo`; it is not Real Corpus Gate evidence.
+`GitIt.Desktop` is a Windows-only WPF human-guided test harness. It first previews a folder's analysis scope, then imports it through the same Core engine. It presents family names, a version lineage view, a timeline, evidence, semantic Diff, participants, warnings, and technical provenance. Users can create or rename document groups, hide items from the analysis view, confirm a source relationship, and add notes. These are stored separately from Core inference in a `.gitit` project file; the project contains an analysis snapshot and annotations, never the original Office files. It does not recalculate Core scores or infer editing environments. Run `dotnet run --project src/GitIt.Benchmarks -- demo` to create an isolated synthetic GUI demonstration under `demo`; it is not Real Corpus Gate evidence.
 
 ## Evidence model
 
@@ -78,6 +78,7 @@ src/GitIt.Cli           analyze / lineage / people / explain / diff / corpus val
 src/GitIt.GroundTruth   reproducible dirty-history generator with hidden answers
 src/GitIt.Benchmarks    accuracy and performance benchmark runner
 src/GitIt.Desktop       minimal WPF Core visual test harness
+src/GitIt.UserAnnotations  user groups, confirmations, hidden items, notes, and .gitit persistence
 tests/GitIt.Tests       parser, semantic diff, abstention, duplicate, and JSON contract tests
 docs/                   stable Analysis Result v1 JSON Schema
 ```

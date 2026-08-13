@@ -1,7 +1,7 @@
 {
   "version": 1,
   "dependencies": {
-    "net8.0-windows7.0": {
+    "net8.0": {
       "DocumentFormat.OpenXml": {
         "type": "Transitive",
         "resolved": "3.5.1",
@@ -27,12 +27,6 @@
         "type": "Project",
         "dependencies": {
           "DocumentFormat.OpenXml": "[3.5.1, )"
-        }
-      },
-      "gitit.userannotations": {
-        "type": "Project",
-        "dependencies": {
-          "GitIt.Core": "[1.0.0, )"
         }
       }
     }

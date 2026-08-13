@@ -133,13 +133,20 @@
       "gitit.desktop": {
         "type": "Project",
         "dependencies": {
-          "GitIt.Core": "[1.0.0, )"
+          "GitIt.Core": "[1.0.0, )",
+          "GitIt.UserAnnotations": "[1.0.0, )"
         }
       },
       "gitit.groundtruth": {
         "type": "Project",
         "dependencies": {
           "DocumentFormat.OpenXml": "[3.5.1, )",
+          "GitIt.Core": "[1.0.0, )"
+        }
+      },
+      "gitit.userannotations": {
+        "type": "Project",
+        "dependencies": {
           "GitIt.Core": "[1.0.0, )"
         }
       }
