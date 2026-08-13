@@ -1,0 +1,30 @@
+{
+  "corpusRoot": "Z:\\zzzxp\\Z_zxp\\Gitit\\real-world-corpus",
+  "gateStatus": "WAITING FOR MANUAL FILE CREATION",
+  "validation": {
+    "isValid": true,
+    "errors": [],
+    "warnings": [],
+    "familyCount": 0,
+    "versionCount": 0
+  },
+  "docxVersions": 0,
+  "xlsxVersions": 0,
+  "pptxVersions": 0,
+  "families": 0,
+  "knownParentEdges": 0,
+  "correctEdges": 0,
+  "wrongEdges": 0,
+  "abstainedEdges": 0,
+  "highConfidenceWrongEdges": 0,
+  "environments": [],
+  "lineage": [],
+  "diffChecks": [],
+  "participants": [],
+  "participantTransitions": [],
+  "newRealWorldIssues": [
+    "No authorized manual Office files are present."
+  ],
+  "recommendation": "WAITING FOR MANUAL CORPUS",
+  "manualActionRequired": "MANUAL_ACTION_REQUIRED: personally create authorized Word/WPS/WeChat, Excel/WPS, and PowerPoint/WPS files following real-world-corpus/README.md, update corpus.json, validate it, then run \u0060dotnet run --project src/GitIt.Benchmarks -- real real-world-corpus\u0060."
+}

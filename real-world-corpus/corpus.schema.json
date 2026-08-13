@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GitIt Real World Corpus v1",
+  "type": "object",
+  "required": ["schemaVersion", "families"],
+  "properties": {
+    "schemaVersion": { "const": "GitIt Real World Corpus v1" },
+    "families": { "type": "array", "items": { "type": "object", "required": ["id", "format", "versions"], "properties": { "id": { "type": "string" }, "format": { "enum": ["docx", "xlsx", "pptx"] }, "description": { "type": "string" }, "versions": { "type": "array", "items": { "type": "object", "required": ["id", "file", "parent"], "properties": { "id": { "type": "string" }, "file": { "type": "string" }, "parent": { "type": ["string", "null"] }, "editor": { "type": "string" }, "editorVersion": { "type": "string" }, "transfer": { "type": "string" }, "operation": { "type": "string" }, "expectedChanges": { "type": "array", "items": { "type": "object", "properties": { "type": { "type": "string" }, "target": { "type": "string" }, "property": { "type": "string" }, "description": { "type": "string" } } } } } } } } }
+  }
+}

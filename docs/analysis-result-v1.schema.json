@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gitit.local/schema/analysis-result-v1.schema.json",
+  "title": "GitIt Analysis Result v1",
+  "type": "object",
+  "required": ["schemaVersion", "project", "documentFamilies", "versions", "edges", "changes", "participants", "evidence", "warnings", "unsupportedFeatures"],
+  "properties": {
+    "schemaVersion": { "const": "GitIt Analysis Result v1" },
+    "project": { "type": "object", "required": ["root", "analyzedAt", "engineVersion"] },
+    "documentFamilies": { "type": "array", "items": { "$ref": "#/$defs/family" } },
+    "versions": { "type": "array", "items": { "$ref": "#/$defs/version" } },
+    "edges": { "type": "array", "items": { "$ref": "#/$defs/edge" } },
+    "changes": { "type": "array", "items": { "$ref": "#/$defs/change" } },
+    "participants": { "type": "array", "items": { "$ref": "#/$defs/participant" } },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "unsupportedFeatures": { "type": "array", "items": { "type": "string" } },
+    "performance": { "type": "array" }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["type", "strength", "score", "detail", "isConflict"],
+      "properties": {
+        "type": { "type": "string" },
+        "strength": { "enum": ["Strong", "Medium", "Weak", "Conflicting", "ParticipationOnly"] },
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "detail": { "type": "string" },
+        "isConflict": { "type": "boolean" }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": ["from", "to", "confidence", "status", "evidence", "warnings"],
+      "properties": {
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "enum": ["Probable", "Possible", "RelatedButUnproven", "Uncertain", "Duplicate"] },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "family": { "type": "object", "required": ["id", "kind", "versionIds", "detectionBasis"] },
+    "version": { "type": "object", "required": ["id", "path", "kind", "fileHash", "fingerprint"] },
+    "change": { "type": "object", "required": ["sourcePath", "targetPath", "kind", "changes"] },
+    "participant": { "type": "object", "required": ["id", "displayName", "evidence"], "properties": { "identityCandidates": { "type": "array", "items": { "type": "object", "required": ["displayName", "possibleSamePersonConfidence", "basis"] } } } }
+  }
+}

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>gitit-benchmark</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GitIt.Core\GitIt.Core.csproj" />
+    <ProjectReference Include="..\GitIt.GroundTruth\GitIt.GroundTruth.csproj" />
+  </ItemGroup>
+</Project>

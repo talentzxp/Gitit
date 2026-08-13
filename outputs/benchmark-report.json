@@ -1,0 +1,274 @@
+{
+  "datasetRoot": "C:\\Users\\Admin\\AppData\\Local\\Temp\\gitit-ground-truth\\282359e4fbb4490da48c3a122bc4a540",
+  "testSummary": "13 / 13",
+  "metrics": [
+    {
+      "name": "documentFamilyDetectionAccuracy",
+      "value": 0.8903,
+      "definition": "Pairwise agreement on synthetic ground truth."
+    },
+    {
+      "name": "parentEdgePrecision",
+      "value": 1,
+      "definition": "Correct asserted parents / asserted parents."
+    },
+    {
+      "name": "parentEdgeRecall",
+      "value": 0.913,
+      "definition": "Correct asserted parents / expected parents."
+    },
+    {
+      "name": "exactParentAccuracy",
+      "value": 0.913,
+      "definition": "Children whose direct parent was selected exactly."
+    },
+    {
+      "name": "branchDetectionAccuracy",
+      "value": 1,
+      "definition": "Expected branch parents detected."
+    },
+    {
+      "name": "duplicateDetectionAccuracy",
+      "value": 1,
+      "definition": "SHA-256 duplicate groups detected."
+    },
+    {
+      "name": "abstentionRate",
+      "value": 1,
+      "definition": "Expected abstentions with no asserted edge."
+    },
+    {
+      "name": "falseConfidentPredictionRate",
+      "value": 0,
+      "definition": "Wrong Probable edges / all asserted edges."
+    }
+  ],
+  "documentFamilyDetectionAccuracy": 0.8903,
+  "parentEdgePrecision": 1,
+  "parentEdgeRecall": 0.913,
+  "exactParentAccuracy": 0.913,
+  "branchDetectionAccuracy": 1,
+  "duplicateDetectionAccuracy": 1,
+  "abstentionRate": 1,
+  "falseConfidentPredictionRate": 0,
+  "falseConfidentPredictions": [],
+  "byFormat": [
+    {
+      "format": "Docx",
+      "versions": 27,
+      "metric": "parentPrecision",
+      "value": 1,
+      "note": "Synthetic only."
+    },
+    {
+      "format": "Docx",
+      "versions": 27,
+      "metric": "parentRecall",
+      "value": 1,
+      "note": "Synthetic only."
+    },
+    {
+      "format": "Xlsx",
+      "versions": 2,
+      "metric": "parentPrecision",
+      "value": null,
+      "note": "Insufficient sample size; synthetic only."
+    },
+    {
+      "format": "Xlsx",
+      "versions": 2,
+      "metric": "parentRecall",
+      "value": null,
+      "note": "Insufficient sample size; synthetic only."
+    },
+    {
+      "format": "Pptx",
+      "versions": 2,
+      "metric": "parentPrecision",
+      "value": null,
+      "note": "Insufficient sample size; synthetic only."
+    },
+    {
+      "format": "Pptx",
+      "versions": 2,
+      "metric": "parentRecall",
+      "value": null,
+      "note": "Insufficient sample size; synthetic only."
+    }
+  ],
+  "templateSiblingFalseFamilyRate": 0,
+  "templateSiblingFalseEdgeRate": 0,
+  "calibration": [
+    {
+      "range": "0.50-0.59",
+      "predictions": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "empiricalAccuracy": null
+    },
+    {
+      "range": "0.60-0.69",
+      "predictions": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "empiricalAccuracy": null
+    },
+    {
+      "range": "0.70-0.79",
+      "predictions": 3,
+      "correct": 3,
+      "incorrect": 0,
+      "empiricalAccuracy": 1
+    },
+    {
+      "range": "0.80-0.89",
+      "predictions": 17,
+      "correct": 17,
+      "incorrect": 0,
+      "empiricalAccuracy": 1
+    },
+    {
+      "range": "0.90-1.00",
+      "predictions": 1,
+      "correct": 1,
+      "incorrect": 0,
+      "empiricalAccuracy": 1
+    }
+  ],
+  "scaling": [
+    {
+      "files": 10,
+      "coldParseMs": 12,
+      "warmParseMs": 9.4,
+      "candidateRetrievalMs": 0.7,
+      "deepScoringMs": 1.8,
+      "graphMs": 0,
+      "jsonMs": 25.2,
+      "totalMs": 40.4,
+      "naivePairs": 90,
+      "retrievedCandidates": 90,
+      "reductionRatio": 0,
+      "averageCandidates": 9,
+      "p95Candidates": 9,
+      "managedBytes": 19153048
+    },
+    {
+      "files": 50,
+      "coldParseMs": 46.8,
+      "warmParseMs": 47.9,
+      "candidateRetrievalMs": 4.5,
+      "deepScoringMs": 12.6,
+      "graphMs": 0,
+      "jsonMs": 5.5,
+      "totalMs": 73.9,
+      "naivePairs": 2450,
+      "retrievedCandidates": 500,
+      "reductionRatio": 0.7959,
+      "averageCandidates": 10,
+      "p95Candidates": 10,
+      "managedBytes": 18262336
+    },
+    {
+      "files": 100,
+      "coldParseMs": 109.6,
+      "warmParseMs": 108.4,
+      "candidateRetrievalMs": 11.5,
+      "deepScoringMs": 29,
+      "graphMs": 0,
+      "jsonMs": 12.1,
+      "totalMs": 173.7,
+      "naivePairs": 9900,
+      "retrievedCandidates": 1000,
+      "reductionRatio": 0.899,
+      "averageCandidates": 10,
+      "p95Candidates": 10,
+      "managedBytes": 33646032
+    },
+    {
+      "files": 500,
+      "coldParseMs": 553.7,
+      "warmParseMs": 603.1,
+      "candidateRetrievalMs": 134.5,
+      "deepScoringMs": 175.8,
+      "graphMs": 0,
+      "jsonMs": 54.1,
+      "totalMs": 1052.6,
+      "naivePairs": 249500,
+      "retrievedCandidates": 5000,
+      "reductionRatio": 0.98,
+      "averageCandidates": 10,
+      "p95Candidates": 10,
+      "managedBytes": 97165608
+    },
+    {
+      "files": 1000,
+      "coldParseMs": 1032.3,
+      "warmParseMs": 877.3,
+      "candidateRetrievalMs": 390.6,
+      "deepScoringMs": 314.1,
+      "graphMs": 0,
+      "jsonMs": 72.5,
+      "totalMs": 2200.1,
+      "naivePairs": 999000,
+      "retrievedCandidates": 10000,
+      "reductionRatio": 0.99,
+      "averageCandidates": 10,
+      "p95Candidates": 10,
+      "managedBytes": 206470272
+    },
+    {
+      "files": 2000,
+      "coldParseMs": 1792.5,
+      "warmParseMs": 1880.5,
+      "candidateRetrievalMs": 1548.1,
+      "deepScoringMs": 566.6,
+      "graphMs": 0,
+      "jsonMs": 111.7,
+      "totalMs": 5567.1,
+      "naivePairs": 3998000,
+      "retrievedCandidates": 20000,
+      "reductionRatio": 0.995,
+      "averageCandidates": 10,
+      "p95Candidates": 10,
+      "managedBytes": 397890256
+    }
+  ],
+  "incremental": {
+    "existingFiles": 500,
+    "addLatencyMs": 129.5,
+    "retrievedCandidates": 10
+  },
+  "groundTruthRetrieval": {
+    "naivePairCount": 930,
+    "retrievedCandidateCount": 259,
+    "candidateReductionRatio": 0.7215,
+    "trueParentCandidateRecall": 1,
+    "averageCandidatesPerVersion": 8.35,
+    "p95CandidatesPerVersion": 10
+  },
+  "candidateRetrievalAccuracyRegression": false,
+  "externalCorpus": {
+    "infrastructureReady": true,
+    "totalFiles": 0,
+    "wordFiles": 0,
+    "wpsFiles": 0,
+    "weChatFiles": 0,
+    "status": "Infrastructure ready, manual corpus still required.",
+    "validationErrors": [],
+    "validationWarnings": []
+  },
+  "failureAnalysis": [
+    {
+      "category": "copy-paste-reconstruction",
+      "detail": "Reconstructed content has no reliable provenance; the engine must abstain or mark it RelatedButUnproven."
+    },
+    {
+      "category": "metadata-and-revision-cleanup",
+      "detail": "Removing document properties, revisions, and comments can erase high-value provenance evidence."
+    },
+    {
+      "category": "template-sibling",
+      "detail": "Highly similar template descendants can look related; the dedicated sibling benchmark checks for false families and edges."
+    }
+  ]
+}
