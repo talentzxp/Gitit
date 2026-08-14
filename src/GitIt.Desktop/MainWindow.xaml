@@ -61,24 +61,26 @@
               <Button Content="重命名" Padding="8,5" Margin="0,0,5,5" Click="RenameGroup_Click" />
               <Button Content="从视图移除" Padding="8,5" Margin="0,0,5,5" Click="HideGroup_Click" />
             </WrapPanel>
+            <CheckBox Content="显示候选关系" IsChecked="{Binding ShowCandidateRelations}" Margin="0,0,0,8" Foreground="#475467" />
           </StackPanel>
           <StackPanel DockPanel.Dock="Bottom">
             <Separator Margin="0,8" />
             <TextBlock Text="未关联文件" FontWeight="SemiBold" />
             <TextBlock Text="这些文件没有可靠 Core 血缘；可选择多个后新建或加入用户文档组。" Foreground="#667085" FontSize="11" TextWrapping="Wrap" Margin="0,2,0,4" />
-            <ListBox ItemsSource="{Binding UnlinkedFiles}" SelectionMode="Extended" SelectionChanged="ManagedFiles_SelectionChanged" Height="125" BorderBrush="#D0D5DD">
+            <ListBox ItemsSource="{Binding UnlinkedFiles}" SelectionMode="Extended" SelectionChanged="ManagedFiles_SelectionChanged" PreviewMouseLeftButtonDown="ManagedFiles_PreviewMouseLeftButtonDown" PreviewMouseMove="ManagedFiles_PreviewMouseMove" Height="125" BorderBrush="#D0D5DD">
               <ListBox.ItemTemplate><DataTemplate><StackPanel Margin="3"><TextBlock Text="{Binding File}" TextTrimming="CharacterEllipsis" /><TextBlock Text="{Binding Detail}" FontSize="11" Foreground="#667085" /></StackPanel></DataTemplate></ListBox.ItemTemplate>
             </ListBox>
             <Button Content="加入选中文档组" Padding="8,5" Margin="0,5,0,0" Click="AddToGroup_Click" />
+            <Button Content="比较所选两个文件" Padding="8,5" Margin="0,5,0,0" Click="CompareSelected_Click" />
             <Button Content="恢复所有已隐藏文件" Padding="8,5" Margin="0,5,0,0" Click="RestoreHidden_Click" />
             <Separator Margin="0,9" />
             <TextBlock Text="搜索" FontWeight="SemiBold" />
             <TextBox Margin="0,4" TextChanged="SearchBox_TextChanged" ToolTip="搜索文件名、已解析内容或参与者" />
-            <ListBox ItemsSource="{Binding SearchResults}" SelectionMode="Extended" SelectionChanged="ManagedFiles_SelectionChanged" Height="95" BorderBrush="#D0D5DD">
+            <ListBox ItemsSource="{Binding SearchResults}" SelectionMode="Extended" SelectionChanged="ManagedFiles_SelectionChanged" PreviewMouseLeftButtonDown="ManagedFiles_PreviewMouseLeftButtonDown" PreviewMouseMove="ManagedFiles_PreviewMouseMove" Height="95" BorderBrush="#D0D5DD">
               <ListBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding File}" Margin="3" TextTrimming="CharacterEllipsis" /></DataTemplate></ListBox.ItemTemplate>
             </ListBox>
           </StackPanel>
-          <ListBox ItemsSource="{Binding Families}" SelectedItem="{Binding SelectedFamily}" BorderThickness="0">
+          <ListBox ItemsSource="{Binding Families}" SelectedItem="{Binding SelectedFamily}" AllowDrop="True" DragOver="FamilyList_DragOver" Drop="FamilyList_Drop" BorderThickness="0">
             <ListBox.ItemTemplate>
               <DataTemplate>
                 <StackPanel Margin="4,8">
@@ -94,7 +96,7 @@
       </Border>
 
       <Border Grid.Column="1" Background="White" BorderBrush="#DCE1E8" BorderThickness="1" Padding="12" Margin="10,0">
-        <TabControl>
+        <TabControl SelectedIndex="{Binding WorkspaceTabIndex}">
           <TabItem Header="血缘">
             <Grid>
               <Grid.RowDefinitions><RowDefinition Height="*" /><RowDefinition Height="176" /></Grid.RowDefinitions>
@@ -138,7 +140,7 @@
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center"><Ellipse Width="12" Height="12" Fill="#426B9B" /><Rectangle Width="2" Height="88" Fill="#D0D5DD" HorizontalAlignment="Center" /></StackPanel>
                 <Button Grid.Column="2" Command="{Binding DataContext.SelectTimelineCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Background="{Binding HighlightBrush}" HorizontalContentAlignment="Left" Padding="10">
                   <StackPanel><DockPanel><TextBlock Text="{Binding EventIcon}" /><TextBlock Text="{Binding EventType}" FontWeight="SemiBold" Margin="6,0" /><TextBlock Text="{Binding File}" DockPanel.Dock="Right" FontWeight="SemiBold" /></DockPanel>
-                    <TextBlock Text="{Binding Participant}" Foreground="#475467" /><TextBlock Text="{Binding Evidence}" Foreground="#667085" FontSize="12" TextWrapping="Wrap" /><TextBlock Text="{Binding ChangeSummary}" Foreground="#426B9B" FontSize="12" TextWrapping="Wrap" /></StackPanel>
+                    <TextBlock Text="{Binding Participant}" Foreground="#475467" /><TextBlock Text="{Binding TimePrecision}" Foreground="#7A5AF8" FontSize="12" /><TextBlock Text="{Binding TimeDescription}" Foreground="#667085" FontSize="12" TextWrapping="Wrap" /><TextBlock Text="{Binding Evidence}" Foreground="#667085" FontSize="12" TextWrapping="Wrap" /><TextBlock Text="{Binding ChangeSummary}" Foreground="#426B9B" FontSize="12" TextWrapping="Wrap" /></StackPanel>
                 </Button>
               </Grid>
             </DataTemplate></ItemsControl.ItemTemplate></ItemsControl></ScrollViewer>
@@ -150,6 +152,18 @@
               <TextBlock Grid.Column="1" Margin="16" Text="选择参与者会高亮关联版本和时间线事件。Creator、Revision Author、Comment Author 与 Possible Participant 分别来自不同 Office 证据，均不是认证身份。" Foreground="#59636E" TextWrapping="Wrap" />
             </Grid>
           </TabItem>
+
+          <TabItem Header="Diff Workbench" Visibility="{Binding HasDiffWorkbench, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid Margin="10"><Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
+              <DockPanel><TextBlock Text="{Binding DiffTitle}" FontSize="16" FontWeight="SemiBold" DockPanel.Dock="Left" /><Button Content="返回历史" Click="CloseDiff_Click" DockPanel.Dock="Right" Padding="8,4" /></DockPanel>
+              <WrapPanel Grid.Row="1" Margin="0,10,0,8"><Button Content="并排" Click="SideBySide_Click" Padding="8,4" Margin="0,0,5,0" /><Button Content="统一" Click="Unified_Click" Padding="8,4" Margin="0,0,14,0" /><TextBlock Text="筛选：" VerticalAlignment="Center" /><ItemsControl ItemsSource="{Binding DiffCategories}"><ItemsControl.ItemsPanel><ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate></ItemsControl.ItemsPanel><ItemsControl.ItemTemplate><DataTemplate><Button Content="{Binding}" Command="{Binding DataContext.SetDiffCategoryCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Padding="7,3" Margin="3,0" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></WrapPanel>
+              <Grid Grid.Row="2" Visibility="{Binding IsUnifiedDiff, Converter={StaticResource InverseBooleanToVisibilityConverter}}"><Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderBrush="#D0D5DD" BorderThickness="1" Padding="8" Margin="0,0,5,0"><DockPanel><TextBlock Text="旧版本" FontWeight="SemiBold" DockPanel.Dock="Top" /><ItemsControl ItemsSource="{Binding DiffRows}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel Margin="0,5"><TextBlock Text="{Binding Location}" Foreground="#667085" FontSize="11" /><TextBlock Text="{Binding Before}" TextWrapping="Wrap" Foreground="#B42318" /></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></DockPanel></Border>
+                <Border Grid.Column="1" BorderBrush="#D0D5DD" BorderThickness="1" Padding="8" Margin="5,0,0,0"><DockPanel><TextBlock Text="新版本" FontWeight="SemiBold" DockPanel.Dock="Top" /><ItemsControl ItemsSource="{Binding DiffRows}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel Margin="0,5"><TextBlock Text="{Binding Location}" Foreground="#667085" FontSize="11" /><TextBlock Text="{Binding After}" TextWrapping="Wrap" Foreground="#067647" /></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></DockPanel></Border>
+              </Grid>
+              <Border Grid.Row="2" Visibility="{Binding IsUnifiedDiff, Converter={StaticResource BooleanToVisibilityConverter}}" BorderBrush="#D0D5DD" BorderThickness="1" Padding="10"><ItemsControl ItemsSource="{Binding DiffRows}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel Margin="0,5"><TextBlock Text="{Binding Location}" Foreground="#667085" FontWeight="SemiBold" /><TextBlock Text="{Binding Before}" Foreground="#B42318" TextWrapping="Wrap" /><TextBlock Text="{Binding After}" Foreground="#067647" TextWrapping="Wrap" /><TextBlock Text="{Binding Detail}" Foreground="#475467" FontSize="12" TextWrapping="Wrap" /></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Border>
+            </Grid>
+          </TabItem>
         </TabControl>
       </Border>
 
@@ -159,8 +173,9 @@
           <TextBlock Text="{Binding SummaryTitle}" FontWeight="SemiBold" FontSize="15" Margin="0,10,0,3" TextWrapping="Wrap" />
           <TextBlock Text="{Binding SummaryText}" Foreground="#475467" TextWrapping="Wrap" />
           <Button Content="确认当前来源关系" Command="{Binding ConfirmSelectedRelationCommand}" Margin="0,10,0,0" HorizontalAlignment="Left" Padding="9,5" />
+          <Button Content="在 Diff Workbench 中查看" Click="OpenDiff_Click" Margin="0,5,0,0" HorizontalAlignment="Left" Padding="9,5" />
 
-          <Expander Header="可能来源（Core candidate parent）" IsExpanded="True" Margin="0,12,0,0"><ItemsControl ItemsSource="{Binding CandidateSources}"><ItemsControl.ItemTemplate><DataTemplate><Border BorderBrush="#D0D5DD" BorderThickness="1" CornerRadius="4" Padding="7" Margin="0,3"><StackPanel><DockPanel><TextBlock Text="{Binding Source}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Width="230" /><TextBlock Text="{Binding Confidence}" DockPanel.Dock="Right" /></DockPanel><TextBlock Text="{Binding Status}" Foreground="#7A5AF8" FontSize="12" /><TextBlock Text="{Binding Support}" Foreground="#067647" FontSize="12" TextWrapping="Wrap" /><TextBlock Text="{Binding Missing}" Foreground="#9B3A1B" FontSize="12" TextWrapping="Wrap" /><Button Content="确认此来源" Command="{Binding DataContext.ConfirmCandidateCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Padding="7,3" Margin="0,5,0,0" HorizontalAlignment="Left" /></StackPanel></Border></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Expander>
+          <Expander Header="可能来源（Core candidate parent）" IsExpanded="True" Margin="0,12,0,0"><ItemsControl ItemsSource="{Binding CandidateSources}"><ItemsControl.ItemTemplate><DataTemplate><Border BorderBrush="#D0D5DD" BorderThickness="1" CornerRadius="4" Padding="7" Margin="0,3"><StackPanel><DockPanel><TextBlock Text="{Binding Source}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Width="230" /><TextBlock Text="{Binding Confidence}" DockPanel.Dock="Right" /></DockPanel><TextBlock Text="{Binding Status}" Foreground="#7A5AF8" FontSize="12" /><TextBlock Text="{Binding Support}" Foreground="#067647" FontSize="12" TextWrapping="Wrap" /><TextBlock Text="{Binding Missing}" Foreground="#9B3A1B" FontSize="12" TextWrapping="Wrap" /><WrapPanel Margin="0,5,0,0"><Button Content="确认此来源" Command="{Binding DataContext.ConfirmCandidateCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Padding="7,3" Margin="0,0,5,0" /><Button Content="保持未确认" Command="{Binding DataContext.KeepCandidateUnconfirmedCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Padding="7,3" Margin="0,0,5,0" /><Button Content="查看 Diff" Command="{Binding DataContext.OpenCandidateDiffCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Padding="7,3" /></WrapPanel></StackPanel></Border></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Expander>
           <Expander Header="主要证据" IsExpanded="True" Margin="0,10,0,0"><ItemsControl ItemsSource="{Binding SupportingEvidence}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" Foreground="#067647" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Expander>
           <Expander Header="不确定性与警告" IsExpanded="True" Margin="0,8,0,0"><ItemsControl ItemsSource="{Binding ConcernEvidence}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" Foreground="#9B3A1B" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Expander>
           <Expander Header="文件夹中的其他警告" Margin="0,8,0,0"><ItemsControl ItemsSource="{Binding Warnings}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" Foreground="#9B3A1B" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Expander>

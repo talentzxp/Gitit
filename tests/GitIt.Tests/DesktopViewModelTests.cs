@@ -1,6 +1,7 @@
 using GitIt.Desktop;
 using GitIt.GroundTruth;
 using GitIt.UserAnnotations;
+using GitIt.Core;
 using Xunit;
 
 namespace GitIt.Tests;
@@ -63,12 +64,13 @@ public sealed class DesktopViewModelTests
         viewModel.SetSelectedFiles(selectedPaths.Select(path => new ManagedFileViewModel(path, Path.GetFileName(path), "DOCX", "未关联文件", string.Empty)));
 
         Assert.True(viewModel.CreateUserGroup("人工确认的报告组"));
+        Assert.True(viewModel.LocalReanalysisCount >= 1);
         var group = Assert.Single(viewModel.Families, item => item.IsUserManaged);
         Assert.True(viewModel.RenameSelectedFamily("人工命名报告"));
         Assert.Contains(viewModel.Families, item => item.Name == "人工命名报告");
 
         var candidate = session.Lineage.Candidates.First();
-        viewModel.ConfirmCandidate(new CandidateSourceItemViewModel(candidate.From, candidate.To, candidate.Confidence.ToString("P0"), candidate.Status.ToString(), string.Empty, string.Empty, candidate, false));
+        viewModel.ConfirmCandidate(new CandidateSourceItemViewModel(candidate.From, candidate.To, candidate.Confidence.ToString("P0"), candidate.Status.ToString(), string.Empty, string.Empty, candidate, false, false));
         Assert.Contains(viewModel.EdgeList, item => item.Kind == GraphRelationKind.UserConfirmed);
         Assert.Equal(originalCoreEdgeCount, session.Analysis.Edges.Count);
 
@@ -88,6 +90,64 @@ public sealed class DesktopViewModelTests
     }
 
     [Fact]
+    public void Participant_timeline_preserves_exact_version_time_and_estimated_events()
+    {
+        var dataset = new GroundTruthGenerator().Create();
+        var session = new DesktopAnalysisAdapter().Analyze(dataset.Root);
+        var viewModel = new MainViewModel();
+        var mixedPaths = session.Profiles.Values.Where(item => item.Kind == OfficeFileKind.Docx).Take(5).Select(item => item.Path).ToArray();
+        viewModel.Load(session);
+        viewModel.SetSelectedFiles(mixedPaths.Select(path => new ManagedFileViewModel(path, Path.GetFileName(path), "DOCX", "未关联文件", string.Empty)));
+        Assert.True(viewModel.CreateUserGroup("参与者时间线测试"));
+        viewModel.SelectedFamily = Assert.Single(viewModel.Families, item => item.IsUserManaged);
+
+        Assert.Contains(viewModel.Timeline, item => item.EventType == "修改" && item.TimePrecision == "精确");
+        Assert.Contains(viewModel.Timeline, item => item.EventType == "评论" && item.TimePrecision == "版本时间");
+        Assert.Contains(viewModel.Timeline, item => item.TimePrecision == "区间推定");
+    }
+
+    [Fact]
+    public void Diff_workbench_can_compare_docx_xlsx_pptx_and_candidate_pairs()
+    {
+        var dataset = new GroundTruthGenerator().Create();
+        var session = new DesktopAnalysisAdapter().Analyze(dataset.Root);
+        var viewModel = new MainViewModel();
+        viewModel.Load(session);
+
+        foreach (var kind in new[] { OfficeFileKind.Docx, OfficeFileKind.Xlsx, OfficeFileKind.Pptx })
+        {
+            var pair = session.Profiles.Values.Where(item => item.Kind == kind).Take(2).Select(item => item.Path).ToArray();
+            viewModel.SetSelectedFiles(pair.Select(path => new ManagedFileViewModel(path, Path.GetFileName(path), kind.ToString(), "", "")));
+            viewModel.CompareSelectedFiles();
+            Assert.True(viewModel.HasDiffWorkbench);
+            Assert.NotEmpty(viewModel.DiffRows);
+        }
+
+        var candidate = session.Lineage.Candidates.First();
+        viewModel.SelectEdgeCommand.Execute(new GraphEdgeViewModel(candidate, 0, 0, 0, 0));
+        viewModel.OpenDiffWorkbench();
+        Assert.True(viewModel.HasDiffWorkbench);
+        Assert.NotEmpty(viewModel.DiffRows);
+    }
+
+    [Fact]
+    public void Timeline_does_not_drop_a_large_participant_set()
+    {
+        var start = new DateTimeOffset(2026, 8, 1, 0, 0, 0, TimeSpan.Zero);
+        var participants = Enumerable.Range(1, 12).Select(index => $"Participant {index:00}").ToArray();
+        OfficeDocumentProfile Profile(string path, DateTimeOffset date, IReadOnlyList<ParticipantEvidence> evidence) => new(path, OfficeFileKind.Docx, 1, date, path, new CommonOfficeMetadata(null, null, null, null, date, null), new Dictionary<string, string>(), evidence, Array.Empty<Evidence>(), Array.Empty<string>());
+        var first = Profile("v1.docx", start, Array.Empty<ParticipantEvidence>());
+        var second = Profile("v2.docx", start.AddDays(4), participants.Select(person => new ParticipantEvidence(person, "v2.docx", "core.xml", "lastModifiedBy", EvidenceStrength.Medium, "metadata" )).ToArray());
+        var identities = participants.Select(person => new ParticipantIdentity(person, person, second.ParticipantEvidence.Where(item => item.Value == person).ToArray())).ToArray();
+        var analysis = new GitItAnalysisResult("test", new ProjectInfo("test", start, "test"), [new DocumentFamily("family", OfficeFileKind.Docx, [first.Path, second.Path], "test")], [new DocumentVersion(first.Path, first.Path, OfficeFileKind.Docx, null, first.FileHash, first.Fingerprint), new DocumentVersion(second.Path, second.Path, OfficeFileKind.Docx, null, second.FileHash, second.Fingerprint)], Array.Empty<LineageEdge>(), Array.Empty<SemanticDiffResult>(), identities, Array.Empty<Evidence>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<PerformanceMetric>());
+        var viewModel = new MainViewModel();
+        viewModel.Load(new DesktopAnalysisSession(analysis, new Dictionary<string, OfficeDocumentProfile> { [first.Path] = first, [second.Path] = second }, new LineageResult(Array.Empty<LineageEdge>(), Array.Empty<LineageCandidate>(), Array.Empty<string>(), Array.Empty<DuplicateGroup>())));
+
+        Assert.Equal(12, viewModel.Timeline.Where(item => item.EventType == "最后保存").Select(item => item.Participant).Distinct(StringComparer.OrdinalIgnoreCase).Count());
+        Assert.Equal(12, viewModel.Timeline.Where(item => item.TimePrecision == "区间推定").Select(item => item.Participant).Distinct(StringComparer.OrdinalIgnoreCase).Count());
+    }
+
+    [Fact]
     public void Annotation_store_persists_groups_relations_hidden_items_and_notes()
     {
         var path = Path.Combine(Path.GetTempPath(), $"gitit-{Guid.NewGuid():N}.gitit");
@@ -96,6 +156,7 @@ public sealed class DesktopViewModelTests
             AnalysisRoot = "C:\\authorized-corpus",
             DocumentGroups = [new UserDocumentGroup { GroupId = "group-001", Name = "贵州土壤三普报告", Files = ["a.docx", "b.docx"] }],
             ConfirmedRelations = [new UserConfirmedRelation { Source = "a.docx", Target = "b.docx" }],
+            CandidateReviews = [new UserCandidateReview { Source = "a.docx", Target = "b.docx", State = "kept-unconfirmed" }],
             HiddenItems = [new UserHiddenItem { Path = "temp.docx" }],
             Notes = new Dictionary<string, string> { ["b.docx"] = "人工确认来源。" }
         };
@@ -107,6 +168,7 @@ public sealed class DesktopViewModelTests
             var loaded = store.Load(path);
             Assert.Equal("贵州土壤三普报告", Assert.Single(loaded.DocumentGroups).Name);
             Assert.Single(loaded.ConfirmedRelations);
+            Assert.Single(loaded.CandidateReviews);
             Assert.Single(loaded.HiddenItems);
             Assert.Equal("人工确认来源。", loaded.Notes["b.docx"]);
         }

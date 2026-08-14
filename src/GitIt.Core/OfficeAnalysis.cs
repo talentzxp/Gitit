@@ -57,10 +57,11 @@ public sealed class OfficeScanner
         var rsids = body is null ? Array.Empty<string>() : ExtractRsids(package.MainDocumentPart!.Document!);
         var revisions = body is null ? new Dictionary<string, int>() : ExtractRevisions(body);
         var revisionAuthors = body is null ? Array.Empty<string>() : ExtractAuthors(body, new[] { "ins", "del", "moveFrom", "moveTo" });
+        var revisionEvents = body is null ? Array.Empty<RevisionEvent>() : ExtractRevisionEvents(body);
         var commentAuthors = ExtractCommentAuthors(package.MainDocumentPart?.WordprocessingCommentsPart);
         var metadata = Metadata(package);
         var details = new DocxDetails(paragraphs, tables, rsids, revisions, revisionAuthors, commentAuthors,
-            Hash(string.Join("\n", paragraphs.Select(p => p.TextHash))), Hash(string.Join("\n", paragraphs.Select(p => p.FormatHash))));
+            Hash(string.Join("\n", paragraphs.Select(p => p.TextHash))), Hash(string.Join("\n", paragraphs.Select(p => p.FormatHash))), revisionEvents);
         var participants = MetadataPeople(path, metadata).Concat(revisionAuthors.Select(a => new ParticipantEvidence(a, path, "wordprocessing/document.xml", "revision-author", EvidenceStrength.Strong, "Author attribute on a tracked change.")))
             .Concat(commentAuthors.Select(a => new ParticipantEvidence(a, path, "word/comments.xml", "comment-author", EvidenceStrength.ParticipationOnly, "Comment authorship proves review participation, not document editing."))).ToArray();
         var evidence = new List<Evidence> { new("content", EvidenceStrength.Medium, 0.50, $"Read {paragraphs.Length} body paragraphs and {tables.Length} top-level tables."), new("metadata", EvidenceStrength.Medium, 0.35, "Read core package properties.") };
@@ -190,6 +191,12 @@ public sealed class OfficeScanner
     private static string[] ExtractRsids(OpenXmlElement root) => new[] { root }.Concat(root.Descendants()).SelectMany(e => e.GetAttributes()).Where(a => a.LocalName.StartsWith("rsid", StringComparison.OrdinalIgnoreCase)).Select(a => a.Value).Where(v => !string.IsNullOrWhiteSpace(v)).Select(v => v!).Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(v => v, StringComparer.OrdinalIgnoreCase).ToArray();
     private static Dictionary<string, int> ExtractRevisions(OpenXmlElement root) => root.Descendants().Where(e => e.LocalName is "ins" or "del" or "moveFrom" or "moveTo").GroupBy(e => e.LocalName, StringComparer.Ordinal).ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
     private static string[] ExtractAuthors(OpenXmlElement root, IEnumerable<string> names) => root.Descendants().Where(e => names.Contains(e.LocalName, StringComparer.Ordinal)).SelectMany(e => e.GetAttributes()).Where(a => a.LocalName.Equals("author", StringComparison.OrdinalIgnoreCase)).Select(a => a.Value).Where(v => !string.IsNullOrWhiteSpace(v)).Select(v => v!).Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(v => v, StringComparer.OrdinalIgnoreCase).ToArray();
+    private static RevisionEvent[] ExtractRevisionEvents(OpenXmlElement root) => root.Descendants().Where(element => element.LocalName is "ins" or "del" or "moveFrom" or "moveTo").Select(element =>
+    {
+        var author = element.GetAttributes().FirstOrDefault(attribute => attribute.LocalName.Equals("author", StringComparison.OrdinalIgnoreCase)).Value;
+        var rawDate = element.GetAttributes().FirstOrDefault(attribute => attribute.LocalName.Equals("date", StringComparison.OrdinalIgnoreCase)).Value;
+        return new RevisionEvent(author ?? string.Empty, DateTimeOffset.TryParse(rawDate, out var date) ? date : null, element.LocalName);
+    }).Where(item => !string.IsNullOrWhiteSpace(item.Author)).ToArray();
     private static string[] ExtractCommentAuthors(WordprocessingCommentsPart? part) => part?.Comments?.Elements<Word.Comment>().Select(c => c.Author?.Value).Where(v => !string.IsNullOrWhiteSpace(v)).Select(v => v!).Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(v => v, StringComparer.OrdinalIgnoreCase).ToArray() ?? Array.Empty<string>();
     private static IReadOnlyList<string> Unsupported(OpenXmlPackage package, IEnumerable<string> keys) => package.Parts.Select(p => p.OpenXmlPart.ContentType).Where(contentType => keys.Any(key => contentType.Contains(key, StringComparison.OrdinalIgnoreCase))).Distinct(StringComparer.OrdinalIgnoreCase).Select(contentType => $"Partially analyzed content detected: {contentType}").ToArray();
     internal static string NormalizeText(string value) => Regex.Replace(value ?? string.Empty, @"\s+", " ").Trim();

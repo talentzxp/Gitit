@@ -14,6 +14,7 @@ public sealed class UserAnnotationProject
     public DateTimeOffset SavedAt { get; set; } = DateTimeOffset.UtcNow;
     public List<UserDocumentGroup> DocumentGroups { get; set; } = [];
     public List<UserConfirmedRelation> ConfirmedRelations { get; set; } = [];
+    public List<UserCandidateReview> CandidateReviews { get; set; } = [];
     public List<UserHiddenItem> HiddenItems { get; set; } = [];
     public Dictionary<string, string> FamilyNames { get; set; } = new(StringComparer.OrdinalIgnoreCase);
     public Dictionary<string, string> Notes { get; set; } = new(StringComparer.OrdinalIgnoreCase);
@@ -35,6 +36,14 @@ public sealed class UserConfirmedRelation
     public string Target { get; set; } = string.Empty;
     public string Type { get; set; } = "user-confirmed-parent";
     public DateTimeOffset ConfirmedAt { get; set; } = DateTimeOffset.UtcNow;
+}
+
+public sealed class UserCandidateReview
+{
+    public string Source { get; set; } = string.Empty;
+    public string Target { get; set; } = string.Empty;
+    public string State { get; set; } = "kept-unconfirmed";
+    public DateTimeOffset ReviewedAt { get; set; } = DateTimeOffset.UtcNow;
 }
 
 public sealed class UserHiddenItem

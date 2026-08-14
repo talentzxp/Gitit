@@ -32,6 +32,7 @@ public sealed record ParticipantIdentity(string Id, string DisplayName, IReadOnl
 
 public sealed record ParagraphFingerprint(int Index, string Text, string TextHash, string StyleId, string FormatHash);
 public sealed record TableFingerprint(int Index, int Rows, int Columns, string Hash);
+public sealed record RevisionEvent(string Author, DateTimeOffset? Date, string Kind);
 
 public sealed record DocxDetails(
     IReadOnlyList<ParagraphFingerprint> Paragraphs,
@@ -41,7 +42,8 @@ public sealed record DocxDetails(
     IReadOnlyList<string> RevisionAuthors,
     IReadOnlyList<string> CommentAuthors,
     string BodyHash,
-    string StyleHash);
+    string StyleHash,
+    IReadOnlyList<RevisionEvent>? RevisionEvents = null);
 
 public sealed record SpreadsheetCell(
     string Address,

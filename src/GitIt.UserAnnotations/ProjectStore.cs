@@ -15,6 +15,7 @@ public sealed class UserAnnotationProjectStore
             throw new InvalidDataException($"Unsupported GitIt project schema: {project.SchemaVersion}.");
         project.DocumentGroups ??= [];
         project.ConfirmedRelations ??= [];
+        project.CandidateReviews ??= [];
         project.HiddenItems ??= [];
         project.FamilyNames ??= new(StringComparer.OrdinalIgnoreCase);
         project.Notes ??= new(StringComparer.OrdinalIgnoreCase);

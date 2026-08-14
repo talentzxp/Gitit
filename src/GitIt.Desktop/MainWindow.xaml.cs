@@ -6,6 +6,7 @@ namespace GitIt.Desktop;
 public partial class MainWindow : Window
 {
     private readonly MainViewModel viewModel = new();
+    private System.Windows.Point? managedFileDragStart;
 
     public MainWindow()
     {
@@ -92,4 +93,46 @@ public partial class MainWindow : Window
     {
         if (sender is System.Windows.Controls.ListBox list) viewModel.SetSelectedFiles(list.SelectedItems.OfType<ManagedFileViewModel>());
     }
+
+    private void ManagedFiles_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs eventArgs) => managedFileDragStart = eventArgs.GetPosition(null);
+
+    private void ManagedFiles_PreviewMouseMove(object sender, System.Windows.Input.MouseEventArgs eventArgs)
+    {
+        if (eventArgs.LeftButton != System.Windows.Input.MouseButtonState.Pressed || managedFileDragStart is null || sender is not System.Windows.Controls.ListBox list) return;
+        var position = eventArgs.GetPosition(null);
+        if (Math.Abs(position.X - managedFileDragStart.Value.X) < SystemParameters.MinimumHorizontalDragDistance && Math.Abs(position.Y - managedFileDragStart.Value.Y) < SystemParameters.MinimumVerticalDragDistance) return;
+        var paths = list.SelectedItems.OfType<ManagedFileViewModel>().Select(item => item.Path).ToArray();
+        if (paths.Length > 0) System.Windows.DragDrop.DoDragDrop(list, new System.Windows.DataObject(typeof(string[]), paths), System.Windows.DragDropEffects.Copy);
+        managedFileDragStart = null;
+    }
+
+    private void FamilyList_DragOver(object sender, System.Windows.DragEventArgs eventArgs)
+    {
+        eventArgs.Effects = eventArgs.Data.GetDataPresent(typeof(string[])) ? System.Windows.DragDropEffects.Copy : System.Windows.DragDropEffects.None;
+        eventArgs.Handled = true;
+    }
+
+    private void FamilyList_Drop(object sender, System.Windows.DragEventArgs eventArgs)
+    {
+        if (eventArgs.Data.GetData(typeof(string[])) is not string[] paths) return;
+        var target = FindAncestor<System.Windows.Controls.ListBoxItem>(eventArgs.OriginalSource as DependencyObject)?.DataContext as FamilyItemViewModel;
+        if (target is null) { viewModel.ShowMessage("请把文件拖到一个用户文档组上。" ); return; }
+        viewModel.AddFilesToGroup(target, paths);
+    }
+
+    private static T? FindAncestor<T>(DependencyObject? element) where T : DependencyObject
+    {
+        while (element is not null)
+        {
+            if (element is T found) return found;
+            element = System.Windows.Media.VisualTreeHelper.GetParent(element);
+        }
+        return null;
+    }
+
+    private void OpenDiff_Click(object sender, RoutedEventArgs eventArgs) => viewModel.OpenDiffWorkbench();
+    private void CompareSelected_Click(object sender, RoutedEventArgs eventArgs) => viewModel.CompareSelectedFiles();
+    private void CloseDiff_Click(object sender, RoutedEventArgs eventArgs) => viewModel.CloseDiffWorkbench();
+    private void SideBySide_Click(object sender, RoutedEventArgs eventArgs) => viewModel.IsUnifiedDiff = false;
+    private void Unified_Click(object sender, RoutedEventArgs eventArgs) => viewModel.IsUnifiedDiff = true;
 }

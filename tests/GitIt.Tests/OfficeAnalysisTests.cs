@@ -19,6 +19,9 @@ public sealed class OfficeAnalysisTests
         var v2 = Assert.Single(result.Documents, d => d.Path == samples.V2);
         Assert.Contains("00A1", v2.Docx!.Rsids);
         Assert.Equal(1, v2.Docx.RevisionKinds["ins"]);
+        var revision = Assert.Single(v2.Docx.RevisionEvents!);
+        Assert.Equal("Reviewer", revision.Author);
+        Assert.NotNull(revision.Date);
         Assert.Contains(v2.ParticipantEvidence, evidence => evidence.Value == "Reviewer" && evidence.EvidenceType == "revision-author");
         Assert.Contains("Reviewer", v2.Docx.CommentAuthors);
     }

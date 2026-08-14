@@ -47,7 +47,7 @@ public sealed record GraphNodeViewModel(string Path, string Label, string Kind, 
     public string HighlightBrush => IsParticipantHighlight ? "#DDEBFF" : "#FFFFFF";
 }
 
-public enum GraphRelationKind { Strong, Weak, RelatedButUnproven, Conflicting, UserConfirmed }
+public enum GraphRelationKind { Strong, Weak, RelatedButUnproven, Candidate, Conflicting, UserConfirmed }
 
 public sealed class GraphEdgeViewModel
 {
@@ -63,7 +63,7 @@ public sealed class GraphEdgeViewModel
     {
         RelatedCandidate = candidate;
         X1 = x1; Y1 = y1; X2 = x2; Y2 = y2;
-        Kind = candidate.Evidence.Any(item => item.IsConflict) ? GraphRelationKind.Conflicting : GraphRelationKind.RelatedButUnproven;
+        Kind = candidate.Evidence.Any(item => item.IsConflict) ? GraphRelationKind.Conflicting : candidate.Status == LineageStatus.RelatedButUnproven ? GraphRelationKind.RelatedButUnproven : GraphRelationKind.Candidate;
     }
 
     public GraphEdgeViewModel(UserConfirmedRelation confirmation, double x1, double y1, double x2, double y2)
@@ -83,21 +83,23 @@ public sealed class GraphEdgeViewModel
     public double X2 { get; }
     public double Y2 { get; }
     public GraphRelationKind Kind { get; }
-    public string Stroke => Kind switch { GraphRelationKind.UserConfirmed => "#1570EF", GraphRelationKind.Conflicting => "#B42318", GraphRelationKind.RelatedButUnproven => "#7A5AF8", _ => "#426B9B" };
-    public string Dash => Kind switch { GraphRelationKind.Strong => string.Empty, GraphRelationKind.Weak => "6,4", GraphRelationKind.RelatedButUnproven => "1,4", GraphRelationKind.UserConfirmed => "10,3", _ => "8,3,2,3" };
+    public string Stroke => Kind switch { GraphRelationKind.UserConfirmed => "#1570EF", GraphRelationKind.Conflicting => "#B42318", GraphRelationKind.RelatedButUnproven => "#7A5AF8", GraphRelationKind.Candidate => "#98A2B3", _ => "#426B9B" };
+    public string Dash => Kind switch { GraphRelationKind.Strong => string.Empty, GraphRelationKind.Weak => "6,4", GraphRelationKind.RelatedButUnproven => "1,4", GraphRelationKind.Candidate => "2,5", GraphRelationKind.UserConfirmed => "10,3", _ => "8,3,2,3" };
     public string Marker => Kind switch { GraphRelationKind.Strong => "→", GraphRelationKind.Weak => "⇢", GraphRelationKind.RelatedButUnproven => "?", GraphRelationKind.UserConfirmed => "✓", _ => "⚠" };
-    public string AccessibleDescription => Kind switch { GraphRelationKind.Strong => "较强 Core 来源关系", GraphRelationKind.Weak => "较弱 Core 来源关系", GraphRelationKind.RelatedButUnproven => "相关但来源未证实", GraphRelationKind.UserConfirmed when Edge is not null => "Core 推断加用户确认", GraphRelationKind.UserConfirmed => "用户确认来源关系", _ => "证据存在冲突" };
+    public string AccessibleDescription => Kind switch { GraphRelationKind.Strong => "较强 Core 来源关系", GraphRelationKind.Weak => "较弱 Core 来源关系", GraphRelationKind.RelatedButUnproven => "相关但来源未证实", GraphRelationKind.Candidate => "候选来源；强血缘证据不足", GraphRelationKind.UserConfirmed when Edge is not null => "Core 推断加用户确认", GraphRelationKind.UserConfirmed => "用户确认来源关系", _ => "证据存在冲突" };
     public string Label => Edge is not null
         ? $"{Marker} {System.IO.Path.GetFileName(Source)} → {System.IO.Path.GetFileName(Target)} · {Edge.Confidence:P0} · {AccessibleDescription}"
-        : $"{Marker} {System.IO.Path.GetFileName(Source)} → {System.IO.Path.GetFileName(Target)} · {AccessibleDescription}";
+        : RelatedCandidate is not null
+            ? $"{Marker} {System.IO.Path.GetFileName(Source)} ··· ? ··· {System.IO.Path.GetFileName(Target)} · {RelatedCandidate.Confidence:P0} · {AccessibleDescription}"
+            : $"{Marker} {System.IO.Path.GetFileName(Source)} → {System.IO.Path.GetFileName(Target)} · {AccessibleDescription}";
 }
 
-public sealed record TimelineItemViewModel(string Path, DateTimeOffset SortTime, string Date, string EventIcon, string EventType, string File, string Kind, string Participant, string Evidence, string ChangeSummary, string Status, string Badges, bool IsParticipantHighlight)
+public sealed record TimelineItemViewModel(string Path, DateTimeOffset SortTime, string Date, string TimePrecision, string TimeDescription, string EventIcon, string EventType, string File, string Kind, string Participant, string Evidence, string ChangeSummary, string Status, string Badges, bool IsParticipantHighlight)
 {
     public string HighlightBrush => IsParticipantHighlight ? "#DDEBFF" : "#FFFFFF";
 }
 public sealed record DiffRowViewModel(string Category, string Location, string Before, string After, string Detail, bool IsRemoval, bool IsAddition);
-public sealed record CandidateSourceItemViewModel(string Source, string Target, string Confidence, string Status, string Support, string Missing, LineageCandidate Candidate, bool IsUserConfirmed);
+public sealed record CandidateSourceItemViewModel(string Source, string Target, string Confidence, string Status, string Support, string Missing, LineageCandidate Candidate, bool IsUserConfirmed, bool IsReviewed);
 
 public sealed record ParticipantItemViewModel(ParticipantIdentity Participant)
 {
@@ -167,6 +169,7 @@ public sealed class MainViewModel : ObservableObject
 {
     private readonly DesktopAnalysisAdapter adapter;
     private readonly UserAnnotationProjectStore projectStore = new();
+    private readonly Dictionary<string, LocalGroupAnalysis> localGroupAnalyses = new(StringComparer.OrdinalIgnoreCase);
     private DesktopAnalysisSession? session;
     private UserAnnotationProject annotations = new();
     private FamilyItemViewModel? selectedFamily;
@@ -180,6 +183,14 @@ public sealed class MainViewModel : ObservableObject
     private string changeTitle = "选择一条关系查看改动";
     private string noteText = string.Empty;
     private string searchText = string.Empty;
+    private string diffTitle = "尚未选择比较";
+    private string selectedDiffCategory = "全部";
+    private SemanticDiffResult? activeDiff;
+    private bool showCandidateRelations;
+    private bool hasDiffWorkbench;
+    private bool isUnifiedDiff;
+    private int localReanalysisCount;
+    private int workspaceTabIndex;
     private bool isBusy;
     private bool hasAnalysis;
 
@@ -192,6 +203,11 @@ public sealed class MainViewModel : ObservableObject
         ConfirmCandidateCommand = new RelayCommand(value => { if (value is CandidateSourceItemViewModel candidate) ConfirmCandidate(candidate); });
         ConfirmSelectedRelationCommand = new RelayCommand(_ => ConfirmSelectedRelation());
         SaveNoteCommand = new RelayCommand(_ => SaveCurrentNote());
+        OpenDiffWorkbenchCommand = new RelayCommand(_ => OpenDiffWorkbench());
+        OpenCandidateDiffCommand = new RelayCommand(value => { if (value is CandidateSourceItemViewModel candidate) OpenCandidateDiff(candidate); });
+        KeepCandidateUnconfirmedCommand = new RelayCommand(value => { if (value is CandidateSourceItemViewModel candidate) KeepCandidateUnconfirmed(candidate); });
+        CompareSelectedFilesCommand = new RelayCommand(_ => CompareSelectedFiles());
+        SetDiffCategoryCommand = new RelayCommand(value => SetDiffCategory(value as string ?? "全部"));
     }
 
     public ObservableCollection<FamilyItemViewModel> Families { get; } = [];
@@ -208,12 +224,18 @@ public sealed class MainViewModel : ObservableObject
     public ObservableCollection<DiffRowViewModel> DiffRows { get; } = [];
     public ObservableCollection<string> TechnicalDetails { get; } = [];
     public ObservableCollection<string> Warnings { get; } = [];
+    public ObservableCollection<string> DiffCategories { get; } = ["全部", "内容", "格式", "结构", "公式"];
     public ICommand SelectNodeCommand { get; }
     public ICommand SelectEdgeCommand { get; }
     public ICommand SelectTimelineCommand { get; }
     public ICommand ConfirmCandidateCommand { get; }
     public ICommand ConfirmSelectedRelationCommand { get; }
     public ICommand SaveNoteCommand { get; }
+    public ICommand OpenDiffWorkbenchCommand { get; }
+    public ICommand OpenCandidateDiffCommand { get; }
+    public ICommand KeepCandidateUnconfirmedCommand { get; }
+    public ICommand CompareSelectedFilesCommand { get; }
+    public ICommand SetDiffCategoryCommand { get; }
     public string StatusText { get => statusText; private set => Set(ref statusText, value); }
     public string SummaryTitle { get => summaryTitle; private set => Set(ref summaryTitle, value); }
     public string SummaryText { get => summaryText; private set => Set(ref summaryText, value); }
@@ -226,6 +248,13 @@ public sealed class MainViewModel : ObservableObject
     public string ScanSummary => pendingPreview?.Summary ?? string.Empty;
     public string ScanSkippedSummary => pendingPreview?.SkippedSummary ?? string.Empty;
     public int ConfirmedRelationCount => annotations.ConfirmedRelations.Count;
+    public int LocalReanalysisCount => localReanalysisCount;
+    public bool ShowCandidateRelations { get => showCandidateRelations; set { if (Set(ref showCandidateRelations, value) && SelectedFamily is not null) BuildFamilyViews(SelectedFamily); } }
+    public bool HasDiffWorkbench { get => hasDiffWorkbench; private set => Set(ref hasDiffWorkbench, value); }
+    public bool IsUnifiedDiff { get => isUnifiedDiff; set => Set(ref isUnifiedDiff, value); }
+    public string DiffTitle { get => diffTitle; private set => Set(ref diffTitle, value); }
+    public int WorkspaceTabIndex { get => workspaceTabIndex; set => Set(ref workspaceTabIndex, value); }
+    public string SelectedDiffCategory { get => selectedDiffCategory; private set => Set(ref selectedDiffCategory, value); }
     public string Summary => session is null ? "未分析文件夹" : $"发现 {VisiblePaths().Count} 个可见 Office 文件 · {Families.Count} 个文档组 · {annotations.ConfirmedRelations.Count} 条用户确认关系";
 
     public FamilyItemViewModel? SelectedFamily
@@ -286,6 +315,8 @@ public sealed class MainViewModel : ObservableObject
         session = value;
         annotations = userProject ?? new UserAnnotationProject { AnalysisRoot = value.Analysis.Project.Root };
         annotations.AnalysisRoot = string.IsNullOrWhiteSpace(annotations.AnalysisRoot) ? value.Analysis.Project.Root : annotations.AnalysisRoot;
+        localGroupAnalyses.Clear(); localReanalysisCount = 0;
+        foreach (var group in annotations.DocumentGroups) ReanalyzeUserGroup(group);
         HasAnalysis = true;
         Warnings.Clear(); Participants.Clear();
         foreach (var warning in value.Analysis.Warnings.Concat(value.Analysis.UnsupportedFeatures).Distinct(StringComparer.OrdinalIgnoreCase)) Warnings.Add(warning);
@@ -301,17 +332,28 @@ public sealed class MainViewModel : ObservableObject
         var paths = selectedManagedFiles.Where(path => VisiblePaths().Contains(path)).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
         if (paths.Length < 2) { ShowMessage("请选择至少两个可见文件后再创建文档组。"); return false; }
         if (string.IsNullOrWhiteSpace(name)) { ShowMessage("文档组需要一个名称。"); return false; }
-        annotations.DocumentGroups.Add(new UserDocumentGroup { Name = name.Trim(), Files = paths.ToList() });
-        RebuildOverlayViews(); StatusText = $"已创建用户文档组“{name.Trim()}”；这不会断言父子关系。"; return true;
+        var group = new UserDocumentGroup { Name = name.Trim(), Files = paths.ToList() };
+        annotations.DocumentGroups.Add(group);
+        ReanalyzeUserGroup(group);
+        RebuildOverlayViews(); ShowNode(paths[^1]); StatusText = $"已创建用户文档组“{name.Trim()}”；这不会断言父子关系。"; return true;
     }
 
     public bool AddSelectedFilesToGroup()
     {
         if (SelectedFamily is null || !SelectedFamily.IsUserManaged) { ShowMessage("请先选择一个“用户文档组”，然后从未关联文件中选择文件加入。" ); return false; }
-        var group = annotations.DocumentGroups.Single(item => item.GroupId == SelectedFamily.Id);
-        var additions = selectedManagedFiles.Where(path => VisiblePaths().Contains(path) && !group.Files.Contains(path, StringComparer.OrdinalIgnoreCase)).ToArray();
+        return AddFilesToGroup(SelectedFamily, selectedManagedFiles);
+    }
+
+    public bool AddFilesToGroup(FamilyItemViewModel family, IEnumerable<string> files)
+    {
+        if (!family.IsUserManaged) { ShowMessage("文件只能加入用户文档组；自动家族仍由 Core 发现。" ); return false; }
+        var group = annotations.DocumentGroups.Single(item => item.GroupId == family.Id);
+        var additions = files.Where(path => VisiblePaths().Contains(path) && !group.Files.Contains(path, StringComparer.OrdinalIgnoreCase)).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
         if (additions.Length == 0) { ShowMessage("没有可加入的新增文件。" ); return false; }
-        group.Files.AddRange(additions); RebuildOverlayViews(); SelectedFamily = Families.Single(item => item.Id == group.GroupId); StatusText = $"已加入 {additions.Length} 个文件；这只表示同一文档组。"; return true;
+        group.Files.AddRange(additions);
+        StatusText = "正在重新分析此文档组…";
+        ReanalyzeUserGroup(group);
+        RebuildOverlayViews(); SelectedFamily = Families.Single(item => item.Id == group.GroupId); ShowNode(additions[^1]); StatusText = $"已加入 {additions.Length} 个文件，并已仅对该用户文档组重新分析候选来源、血缘和 Diff。"; return true;
     }
 
     public bool RenameSelectedFamily(string name)
@@ -345,6 +387,8 @@ public sealed class MainViewModel : ObservableObject
     {
         if (annotations.ConfirmedRelations.Any(item => Same(item.Source, source) && Same(item.Target, target))) { ShowMessage("该来源关系已经由用户确认。" ); return; }
         annotations.ConfirmedRelations.Add(new UserConfirmedRelation { Source = source, Target = target });
+        annotations.CandidateReviews.RemoveAll(item => Same(item.Source, source) && Same(item.Target, target));
+        annotations.CandidateReviews.Add(new UserCandidateReview { Source = source, Target = target, State = "confirmed" });
         RebuildOverlayViews(); Raise(nameof(ConfirmedRelationCount));
         if (SelectedFamily is not null) SelectedFamily = Families.FirstOrDefault(item => item.Paths.Contains(target, StringComparer.OrdinalIgnoreCase));
         StatusText = $"已记录用户确认：{System.IO.Path.GetFileName(source)} 是 {System.IO.Path.GetFileName(target)} 的来源。Core 推断未被修改。";
@@ -395,6 +439,18 @@ public sealed class MainViewModel : ObservableObject
         SelectedFamily = Families.FirstOrDefault(); Raise(nameof(Summary));
     }
 
+    private void ReanalyzeUserGroup(UserDocumentGroup group)
+    {
+        if (session is null) return;
+        var profiles = group.Files.Where(session.Profiles.ContainsKey).Distinct(StringComparer.OrdinalIgnoreCase).Select(path => session.Profiles[path]).ToArray();
+        if (profiles.Length < 2) { localGroupAnalyses.Remove(group.GroupId); return; }
+        localGroupAnalyses[group.GroupId] = adapter.AnalyzeGroup(profiles);
+        localReanalysisCount++;
+        Raise(nameof(LocalReanalysisCount));
+    }
+
+    private LineageResult LineageFor(FamilyItemViewModel family) => family.IsUserManaged && localGroupAnalyses.TryGetValue(family.Id, out var local) ? local.Lineage : session!.Lineage;
+
     private void BuildFamilies()
     {
         Families.Clear();
@@ -437,8 +493,10 @@ public sealed class MainViewModel : ObservableObject
         if (session is null) return;
         GraphNodes.Clear(); GraphEdges.Clear(); EdgeList.Clear(); Timeline.Clear();
         var familyPaths = family.Paths.ToHashSet(StringComparer.OrdinalIgnoreCase);
-        var edges = session.Analysis.Edges.Where(edge => familyPaths.Contains(edge.From) && familyPaths.Contains(edge.To)).ToArray();
-        var related = session.Lineage.Candidates.Where(candidate => candidate.Status == LineageStatus.RelatedButUnproven && familyPaths.Contains(candidate.From) && familyPaths.Contains(candidate.To)).ToArray();
+        var lineage = LineageFor(family);
+        var edges = lineage.Edges.Where(edge => familyPaths.Contains(edge.From) && familyPaths.Contains(edge.To)).ToArray();
+        var related = lineage.Candidates.Where(candidate => candidate.Status == LineageStatus.RelatedButUnproven && familyPaths.Contains(candidate.From) && familyPaths.Contains(candidate.To)).ToArray();
+        var candidates = lineage.Candidates.Where(candidate => candidate.Status != LineageStatus.RelatedButUnproven && familyPaths.Contains(candidate.From) && familyPaths.Contains(candidate.To) && !edges.Any(edge => Same(edge.From, candidate.From) && Same(edge.To, candidate.To))).ToArray();
         var confirmations = annotations.ConfirmedRelations.Where(item => familyPaths.Contains(item.Source) && familyPaths.Contains(item.Target)).ToArray();
         var parents = edges.GroupBy(item => item.To, StringComparer.OrdinalIgnoreCase).ToDictionary(group => group.Key, group => group.OrderByDescending(item => item.Confidence).First().From, StringComparer.OrdinalIgnoreCase);
         var levels = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase); var visiting = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -468,6 +526,7 @@ public sealed class MainViewModel : ObservableObject
             AddGraphEdge(new GraphEdgeViewModel(edge, nodes[edge.From].X + 182, nodes[edge.From].Y + 43, nodes[edge.To].X, nodes[edge.To].Y + 43, confirmation));
         }
         foreach (var candidate in related.Where(candidate => !confirmations.Any(item => Same(item.Source, candidate.From) && Same(item.Target, candidate.To)))) AddGraphEdge(new GraphEdgeViewModel(candidate, nodes[candidate.From].X + 182, nodes[candidate.From].Y + 60, nodes[candidate.To].X, nodes[candidate.To].Y + 60));
+        if (ShowCandidateRelations) foreach (var candidate in candidates.Where(candidate => !confirmations.Any(item => Same(item.Source, candidate.From) && Same(item.Target, candidate.To)))) AddGraphEdge(new GraphEdgeViewModel(candidate, nodes[candidate.From].X + 182, nodes[candidate.From].Y + 68, nodes[candidate.To].X, nodes[candidate.To].Y + 68));
         foreach (var confirmation in confirmations.Where(confirmation => !edges.Any(edge => Same(edge.From, confirmation.Source) && Same(edge.To, confirmation.Target)))) AddGraphEdge(new GraphEdgeViewModel(confirmation, nodes[confirmation.Source].X + 182, nodes[confirmation.Source].Y + 60, nodes[confirmation.Target].X, nodes[confirmation.Target].Y + 60));
         BuildTimeline(familyPaths, edges);
         SummaryTitle = family.Name;
@@ -479,31 +538,59 @@ public sealed class MainViewModel : ObservableObject
 
     private void BuildTimeline(IReadOnlySet<string> familyPaths, IReadOnlyList<LineageEdge> edges)
     {
-        var items = new List<TimelineItemViewModel>();
-        foreach (var path in familyPaths)
+        var events = new List<TimelineEvent>();
+        var ordered = familyPaths.OrderBy(Date).ThenBy(path => path, StringComparer.OrdinalIgnoreCase).ToArray();
+        var firstSeen = new Dictionary<string, (string Path, DateTimeOffset Date)>(StringComparer.OrdinalIgnoreCase);
+        for (var index = 0; index < ordered.Length; index++)
         {
-            var profile = session!.Profiles[path]; var edge = edges.SingleOrDefault(value => Same(value.To, path)); var date = Date(path);
-            var creator = profile.ParticipantEvidence.Where(item => item.EvidenceType == "creator").Select(item => item.Value).Distinct().ToArray();
-            items.Add(new TimelineItemViewModel(path, profile.Metadata.Created ?? date, (profile.Metadata.Created ?? date).ToString("yyyy-MM-dd HH:mm"), "📄", "创建", System.IO.Path.GetFileName(path), profile.Kind.ToString().ToUpperInvariant(), creator.Length == 0 ? "创建者未知" : string.Join(", ", creator), profile.Metadata.Created is null ? "未保存创建时间；使用文件时间" : "Core metadata: Created", "文件进入本次分析", edge?.Status.ToString() ?? "未关联", Badges(profile, false), ParticipantMatches(path)));
-            foreach (var evidence in profile.ParticipantEvidence.Where(item => item.EvidenceType != "creator"))
+            var path = ordered[index]; var profile = session!.Profiles[path]; var versionTime = Date(path); var edge = edges.SingleOrDefault(value => Same(value.To, path));
+            var creator = profile.ParticipantEvidence.FirstOrDefault(item => item.EvidenceType == "creator")?.Value;
+            events.Add(new TimelineEvent(TimelineEventType.Created, creator, path, profile.Metadata.Created ?? versionTime, null, profile.Metadata.Created is null ? TimePrecision.VersionTime : TimePrecision.Exact, "creator", EvidenceStrength.Medium, profile.Metadata.Created is null ? "创建时间未保存；时间取自版本时间。" : "Evidence: package Created."));
+            var exactRevisionAuthors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var revision in profile.Docx?.RevisionEvents ?? Array.Empty<RevisionEvent>())
             {
-                var (icon, eventType, detail) = evidence.EvidenceType switch
-                {
-                    "revision-author" => ("✏", "修改", "Evidence: Revision Author；事件时间未单独保存，按文件修改时间展示"),
-                    "comment-author" => ("💬", "评论", "Evidence: Comment Author；评论证明参与，不证明编辑"),
-                    "lastModifiedBy" => ("💾", "保存", "Evidence: LastModifiedBy；这是元数据线索，不是认证身份"),
-                    _ => ("👥", "参与", $"Evidence: {evidence.EvidenceType}")
-                };
-                items.Add(new TimelineItemViewModel(path, date, date.ToString("yyyy-MM-dd HH:mm"), icon, eventType, System.IO.Path.GetFileName(path), profile.Kind.ToString().ToUpperInvariant(), evidence.Value, detail, TimelineChanges(path, edge), edge?.Status.ToString() ?? "未关联", Badges(profile, false), ParticipantMatches(path)));
+                exactRevisionAuthors.Add(revision.Author);
+                events.Add(new TimelineEvent(TimelineEventType.Modified, revision.Author, path, revision.Date ?? versionTime, null, revision.Date is null ? TimePrecision.VersionTime : TimePrecision.Exact, "revision-author", EvidenceStrength.Strong, revision.Date is null ? "Evidence: Revision Author；时间取自版本时间。" : $"Evidence: Revision Author + Revision Date ({revision.Kind})."));
             }
+            foreach (var evidence in profile.ParticipantEvidence.Where(item => item.EvidenceType != "creator" && !(item.EvidenceType == "revision-author" && exactRevisionAuthors.Contains(item.Value))))
+            {
+                var eventType = evidence.EvidenceType switch { "revision-author" => TimelineEventType.Modified, "comment-author" => TimelineEventType.Commented, "lastModifiedBy" => TimelineEventType.Saved, _ => TimelineEventType.Participated };
+                events.Add(new TimelineEvent(eventType, evidence.Value, path, versionTime, null, TimePrecision.VersionTime, evidence.EvidenceType, evidence.Strength, evidence.EvidenceType switch { "comment-author" => "Evidence: Comment Author；评论证明参与，不证明修改。时间取自版本时间。", "lastModifiedBy" => "Evidence: LastModifiedBy；保存线索不是认证身份。时间取自版本时间。", "revision-author" => "Evidence: Revision Author；未保存独立修订时间，时间取自版本时间。", _ => $"Evidence: {evidence.EvidenceType}；时间取自版本时间。" }));
+            }
+            foreach (var person in profile.ParticipantEvidence.Select(item => item.Value).Where(value => !string.IsNullOrWhiteSpace(value)).Distinct(StringComparer.OrdinalIgnoreCase))
+            {
+                if (firstSeen.ContainsKey(person)) continue;
+                if (index > 0 && !events.Any(item => Same(item.Version, path) && Same(item.Participant ?? string.Empty, person) && item.EventType == TimelineEventType.Modified && item.TimePrecision == TimePrecision.Exact))
+                {
+                    var previous = Date(ordered[index - 1]);
+                    events.Add(new TimelineEvent(TimelineEventType.Participated, person, path, previous, versionTime, TimePrecision.EstimatedInterval, "first-participation-evidence", EvidenceStrength.Weak, "首次出现参与证据；这是版本间隔推定，不是精确参与时间。"));
+                }
+                firstSeen[person] = (path, versionTime);
+            }
+            events.Add(new TimelineEvent(TimelineEventType.VersionObserved, null, path, versionTime, null, TimePrecision.VersionTime, "version-observed", EvidenceStrength.Weak, TimelineChanges(path, edge)));
         }
-        foreach (var item in items.OrderBy(item => item.SortTime).ThenBy(item => item.File, StringComparer.OrdinalIgnoreCase).ThenBy(item => item.EventType)) Timeline.Add(item);
+        foreach (var item in events.OrderBy(item => item.Start ?? DateTimeOffset.MaxValue).ThenBy(item => item.Version, StringComparer.OrdinalIgnoreCase).ThenBy(item => item.EventType)) Timeline.Add(ToTimelineItem(item, edges));
+    }
+
+    private TimelineItemViewModel ToTimelineItem(TimelineEvent item, IReadOnlyList<LineageEdge> edges)
+    {
+        var profile = session!.Profiles[item.Version];
+        var (date, precision, detail) = item.TimePrecision switch
+        {
+            TimePrecision.Exact => (item.Start?.ToString("yyyy-MM-dd HH:mm") ?? "时间未知", "精确", "时间由独立 Office 事件证据保存。"),
+            TimePrecision.VersionTime => (item.Start?.ToString("yyyy-MM-dd HH:mm") ?? "时间未知", "版本时间", "时间取自版本时间，而非独立参与事件时间。"),
+            TimePrecision.EstimatedInterval => ($"{item.Start:yyyy-MM-dd} ～ {item.End:yyyy-MM-dd}", "区间推定", "这是区间推定，不是精确事件时间。"),
+            _ => ("时间未知", "未知", "Office 包未保存可用时间。")
+        };
+        var (icon, name) = item.EventType switch { TimelineEventType.Created => ("📄", "创建"), TimelineEventType.Modified => ("✏", "修改"), TimelineEventType.Commented => ("💬", "评论"), TimelineEventType.Saved => ("💾", "最后保存"), TimelineEventType.Participated => ("👥", "参与"), _ => ("●", "版本观察") };
+        var edge = edges.SingleOrDefault(value => Same(value.To, item.Version));
+        return new TimelineItemViewModel(item.Version, item.Start ?? DateTimeOffset.MaxValue, date, precision, detail, icon, name, System.IO.Path.GetFileName(item.Version), profile.Kind.ToString().ToUpperInvariant(), item.Participant ?? "—", $"{item.Description} Strength: {item.EvidenceStrength}", TimelineChanges(item.Version, edge), edge?.Status.ToString() ?? "未关联", Badges(profile, false), ParticipantMatches(item.Version));
     }
 
     private string TimelineChanges(string path, LineageEdge? edge)
     {
         if (edge is null) return "未检测到可展示的已支持改动";
-        var diff = session!.Analysis.Changes.SingleOrDefault(change => Same(change.SourcePath, edge.From) && Same(change.TargetPath, edge.To));
+        var diff = FindDiff(edge.From, edge.To);
         return diff is null ? "Core 未提供此关系的语义 Diff" : string.Join(" · ", diff.Changes.GroupBy(change => change.Category).Select(group => $"{DisplayCategory(group.Key)} {group.Count()}处"));
     }
 
@@ -511,7 +598,8 @@ public sealed class MainViewModel : ObservableObject
     {
         if (session is null || !session.Profiles.TryGetValue(path, out var profile)) return;
         selectedNodePath = path; NoteText = annotations.Notes.TryGetValue(path, out var note) ? note : string.Empty;
-        var parent = session.Analysis.Edges.SingleOrDefault(edge => Same(edge.To, path));
+        var lineage = SelectedFamily is null ? session.Lineage : LineageFor(SelectedFamily);
+        var parent = lineage.Edges.SingleOrDefault(edge => Same(edge.To, path));
         SummaryTitle = System.IO.Path.GetFileName(path);
         SummaryText = parent is null ? "该文件没有可断言的直接来源；这是 GitIt 保留不确定性的结果。" : $"该文件很可能来自：{System.IO.Path.GetFileName(parent.From)}（{parent.Confidence:P0}，{parent.Status}）。";
         SupportingEvidence.Clear(); ConcernEvidence.Clear(); DiffRows.Clear(); TechnicalDetails.Clear(); CandidateSources.Clear(); selectedRelation = null;
@@ -522,7 +610,7 @@ public sealed class MainViewModel : ObservableObject
             foreach (var warning in parent.Warnings) ConcernEvidence.Add($"⚠ {warning}");
         }
         foreach (var warning in profile.UnsupportedFeatures) ConcernEvidence.Add($"⚠ {warning}");
-        foreach (var candidate in session.Lineage.Candidates.Where(item => Same(item.To, path)).OrderByDescending(item => item.Confidence).Take(8)) CandidateSources.Add(ToCandidate(candidate));
+        foreach (var candidate in lineage.Candidates.Where(item => Same(item.To, path)).OrderByDescending(item => item.Confidence).Take(12)) CandidateSources.Add(ToCandidate(candidate));
         TechnicalDetails.Add($"Open XML file hash: {profile.FileHash}");
         TechnicalDetails.Add($"Creator: {profile.Metadata.Creator ?? "(none)"}");
         TechnicalDetails.Add($"LastModifiedBy: {profile.Metadata.LastModifiedBy ?? "(none)"}");
@@ -534,7 +622,7 @@ public sealed class MainViewModel : ObservableObject
     {
         var support = candidate.Evidence.Where(item => !item.IsConflict).OrderByDescending(item => item.Score).Take(3).Select(item => item.Detail);
         var missing = candidate.Warnings.Concat(candidate.Evidence.Where(item => item.IsConflict).Select(item => item.Detail));
-        return new CandidateSourceItemViewModel(candidate.From, candidate.To, candidate.Confidence.ToString("P0"), candidate.Status.ToString(), string.Join("；", support), string.Join("；", missing), candidate, annotations.ConfirmedRelations.Any(item => Same(item.Source, candidate.From) && Same(item.Target, candidate.To)));
+        return new CandidateSourceItemViewModel(candidate.From, candidate.To, candidate.Confidence.ToString("P0"), candidate.Status.ToString(), string.Join("；", support), string.Join("；", missing), candidate, annotations.ConfirmedRelations.Any(item => Same(item.Source, candidate.From) && Same(item.Target, candidate.To)), annotations.CandidateReviews.Any(item => Same(item.Source, candidate.From) && Same(item.Target, candidate.To)));
     }
 
     private void ShowRelation(GraphEdgeViewModel relation)
@@ -552,9 +640,9 @@ public sealed class MainViewModel : ObservableObject
             foreach (var evidence in relation.Edge.Evidence) TechnicalDetails.Add($"{evidence.Type}: {evidence.Score:F2} ({evidence.Strength})");
         }
         if (relation.Confirmation is not null) SupportingEvidence.Add($"✓ 用户于 {relation.Confirmation.ConfirmedAt:yyyy-MM-dd} 确认该来源关系。");
-        var diff = session!.Analysis.Changes.SingleOrDefault(change => Same(change.SourcePath, relation.Source) && Same(change.TargetPath, relation.Target));
+        var diff = FindDiff(relation.Source, relation.Target);
         if (diff is null) ConcernEvidence.Add("⚠ Core 未提供此关系的语义 Diff。");
-        else foreach (var change in diff.Changes) DiffRows.Add(new DiffRowViewModel(DisplayCategory(change.Category), change.Location, change.Before ?? string.Empty, change.After ?? string.Empty, change.Detail, !string.IsNullOrWhiteSpace(change.Before) && string.IsNullOrWhiteSpace(change.After), string.IsNullOrWhiteSpace(change.Before) && !string.IsNullOrWhiteSpace(change.After)));
+        else SetActiveDiff(diff);
     }
 
     private void ShowRelated(LineageCandidate candidate)
@@ -566,6 +654,64 @@ public sealed class MainViewModel : ObservableObject
         foreach (var warning in candidate.Warnings) ConcernEvidence.Add($"⚠ {warning}");
         foreach (var evidence in candidate.Evidence.Where(item => item.IsConflict)) ConcernEvidence.Add($"⚠ {evidence.Detail}");
         CandidateSources.Add(ToCandidate(candidate));
+    }
+
+    public void OpenDiffWorkbench()
+    {
+        if (selectedRelation is null) { ShowMessage("请先选择一条血缘关系或候选来源。" ); return; }
+        var diff = FindDiff(selectedRelation.Source, selectedRelation.Target);
+        if (diff is null) { ShowMessage("这两个文件没有可用的 Core semantic Diff。" ); return; }
+        SetActiveDiff(diff); HasDiffWorkbench = true; WorkspaceTabIndex = 3; StatusText = "已打开 Diff Workbench。";
+    }
+
+    private void OpenCandidateDiff(CandidateSourceItemViewModel candidate)
+    {
+        selectedRelation = new GraphEdgeViewModel(candidate.Candidate, 0, 0, 0, 0);
+        OpenDiffWorkbench();
+    }
+
+    private void KeepCandidateUnconfirmed(CandidateSourceItemViewModel candidate)
+    {
+        if (annotations.CandidateReviews.Any(item => Same(item.Source, candidate.Source) && Same(item.Target, candidate.Target))) { ShowMessage("该候选已经记录审阅状态。" ); return; }
+        annotations.CandidateReviews.Add(new UserCandidateReview { Source = candidate.Source, Target = candidate.Target, State = "kept-unconfirmed" });
+        StatusText = "已记录为“保持未确认”；这不会创建血缘边。";
+    }
+
+    public void CompareSelectedFiles()
+    {
+        var paths = selectedManagedFiles.Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+        if (paths.Length != 2 || session is null) { ShowMessage("请在未关联文件或搜索结果中选择恰好两个文件后比较。" ); return; }
+        var source = paths.OrderBy(Date).ThenBy(path => path, StringComparer.OrdinalIgnoreCase).First();
+        var target = paths.Single(path => !Same(path, source));
+        SetActiveDiff(FindDiff(source, target) ?? adapter.Compare(session.Profiles[source], session.Profiles[target]));
+        HasDiffWorkbench = true; WorkspaceTabIndex = 3; StatusText = "已打开所选两个版本的比较；这不要求它们已有血缘关系。";
+    }
+
+    public void CloseDiffWorkbench() { HasDiffWorkbench = false; WorkspaceTabIndex = 0; }
+
+    private void SetActiveDiff(SemanticDiffResult diff)
+    {
+        activeDiff = diff; DiffTitle = $"{System.IO.Path.GetFileName(diff.SourcePath)}  →  {System.IO.Path.GetFileName(diff.TargetPath)}"; RefreshDiffRows();
+    }
+
+    private void SetDiffCategory(string category)
+    {
+        SelectedDiffCategory = category; RefreshDiffRows();
+    }
+
+    private void RefreshDiffRows()
+    {
+        DiffRows.Clear();
+        if (activeDiff is null) return;
+        foreach (var change in activeDiff.Changes.Where(change => SelectedDiffCategory == "全部" || DisplayCategory(change.Category) == SelectedDiffCategory)) DiffRows.Add(new DiffRowViewModel(DisplayCategory(change.Category), change.Location, change.Before ?? string.Empty, change.After ?? string.Empty, change.Detail, !string.IsNullOrWhiteSpace(change.Before) && string.IsNullOrWhiteSpace(change.After), string.IsNullOrWhiteSpace(change.Before) && !string.IsNullOrWhiteSpace(change.After)));
+    }
+
+    private SemanticDiffResult? FindDiff(string source, string target)
+    {
+        var global = session!.Analysis.Changes.SingleOrDefault(change => Same(change.SourcePath, source) && Same(change.TargetPath, target));
+        if (global is not null) return global;
+        foreach (var local in localGroupAnalyses.Values) if (local.Diffs.TryGetValue(DesktopAnalysisAdapter.PairKey(source, target), out var found)) return found;
+        return session.Profiles.ContainsKey(source) && session.Profiles.ContainsKey(target) ? adapter.Compare(session.Profiles[source], session.Profiles[target]) : null;
     }
 
     private ManagedFileViewModel ToManagedFile(string path)
